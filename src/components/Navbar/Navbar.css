@@ -1,0 +1,57 @@
+/* Estilos base del Navbar */
+.navbar {
+  background-color: #006994; /* Tonalidad azul mar */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-item {
+  position: relative;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Efecto hover para el enlace */
+.navbar-link:hover {
+  color: #a8dadc; /* Cambia a un tono más claro cuando se hace hover */
+}
+
+/* Animación de hover: deslizar subrayado */
+.navbar-item::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #a8dadc;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-item:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Estilo para la animación en hover que cubre todo el navbar */
+.navbar:hover {
+  background-color: #005680; /* Oscurece el azul al hacer hover en cualquier parte del navbar */
+  transition: background-color 0.4s ease-in-out;
+}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ejercicios.css';
 
-const App: React.FC = () => {
+const Ejercicio1: React.FC = () => {
   const pronouns = [
     { pronoun: 'Ich', answer: 'bin' },
     { pronoun: 'Du', answer: 'bist' },
@@ -47,7 +47,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="App">
+    <div className="Ejercicio1">
       <h1>Conjugación del Verbo "Sein"</h1>
       <div className="pronouns">
         {pronouns.map((item, index) => (
@@ -79,4 +79,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default Ejercicio1;
