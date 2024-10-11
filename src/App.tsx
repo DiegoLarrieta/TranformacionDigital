@@ -1,24 +1,31 @@
-//Componente principal que renderiza las paginas
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header/header';  // Asegúrate de ajustar la ruta de importación
+import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
-import MisCursos from './components/MisCursos/MisCursos';
-import Objetivos from './components/Objetivos/Objetivos';
-import Politicas from './components/Politicas/Politicas';
-import Contactanos from './components/Contactanos/Contactanos';
+import AppRoutes from './routes/AppRoutes';
+import './styles/global.css';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/mis-cursos" element={<MisCursos />} />
-        <Route path="/objetivos" element={<Objetivos />} />
-        <Route path="/politicas" element={<Politicas />} />
-        <Route path="/contactanos" element={<Contactanos />} />
-      </Routes>
+      <div className="app">
+        <Header /> 
+        <Navbar />
+        <div className="content">
+          {/* Aquí puedes incluir el contenido principal de tu aplicación */}
+          <AppRoutes /> 
+          <Routes>
+            {/* Aquí agregarías tus rutas, por ejemplo: */}
+            {/* <Route path="/" element={<Home />} /> */}
+            {/* <Route path="/about" element={<About />} /> */}
+            {/* <Route path="/contact" element={<Contact />} /> */}
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </Router>
   );
-}
+};
 
 export default App;

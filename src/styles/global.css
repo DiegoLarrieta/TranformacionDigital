@@ -1,0 +1,59 @@
+.app {
+  display: flex;
+  flex-direction: column; /* Cambiar a columna para que los elementos se apilen */
+  height: 100vh;
+}
+
+header {
+  height: 80px; /* Ajusta según la altura de tu header */
+
+}
+
+.navbar {
+  flex-grow: 1; /* Permite que el navbar ocupe el espacio restante */
+  margin: 0; /* Quita el margen para evitar espacios innecesarios */
+}
+
+.content {
+  padding: 20px; /* Espaciado alrededor del contenido */
+
+}
+
+footer {
+  height: 50px; /* Ajusta la altura del footer si es necesario */
+  margin: 0; /* Quita el margen superior para evitar colisiones */
+}
+
+/*
+Continua estilos para el temario
+*/
+
+.temario-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.temario-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.temario-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 10px;
+  width: 200px; /* Ajusta según sea necesario */
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.temario-card:hover {
+  transform: scale(1.05);
+}
+
+.temario-image {
+  width: 100%; /* Asegúrate de que la imagen se ajuste a la tarjeta */
+  border-radius: 4px;
+}

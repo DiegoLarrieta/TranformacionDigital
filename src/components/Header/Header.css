@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  justify-content: space-between; /* Espacio entre logos */
+  align-items: center; /* Alinear verticalmente en el centro */
+  padding: 5px 20px;
+  background-color: #0056b3; /* Color azul */
+  height: auto;
+  width: 100%; /* Ocupar todo el ancho */
+  position: fixed; /* Para que quede fijo en la parte superior */
+  top: 0; /* Posición superior fija */
+  z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+}
+
+.cvx {
+  width: 100px; /* Tamaño del logo del CVA */
+}
+
+.tec-logo {
+  width: 150px; /* Tamaño del logo del Tec */
+  padding-right: 30px;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .cvx {
+    width: 80px; /* Reducir tamaño en pantallas pequeñas */
+  }
+
+  .tec-logo {
+    width: 100px; /* Reducir tamaño en pantallas pequeñas */
+    padding-right: 10px;
+  }
+
+  h1 {
+    font-size: 1em; /* Ajustar el tamaño del texto */
+  }
+}
+
+.title-container {
+  text-align: center;
+  flex-grow: 1; /* Ocupa el espacio restante entre los logos */
+  padding: 0 10px;
+}
+
+/* Clase typing: Aplica el cursor parpadeante solo mientras se escribe */
+.typing {
+  border-right: 2px solid white; /* Cursor parpadeante */
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+h1 {
+  color: white;
+  font-size: 1.2em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* Animación para el cursor parpadeante */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}

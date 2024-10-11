@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './ejercicios.css';
+import './Ejercicio1.css';
 
 const Ejercicio1: React.FC = () => {
   const pronouns = [
