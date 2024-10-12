@@ -17,6 +17,8 @@ import htmlcss from "./courseimg/htmlcss.jpeg";
 import javascript from "./courseimg/JavaScript.png";
 import reacttypescript from "./courseimg/reacttypescript.jpg";
 
+import borregoavatarimg from "./avatar/borregoavatar.png";
+
 export {
   isotipoBlanco,
   logolargo,
@@ -34,4 +36,5 @@ export {
   htmlcss,
   javascript,
   reacttypescript,
+  borregoavatarimg,
 };
