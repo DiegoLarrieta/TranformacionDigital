@@ -15,7 +15,7 @@ import { contactoIcon,
       <nav className="navbar">
         <ul className="navbar-list">
           <li className="navbar-item">
-            <Link to="">
+            <Link to="/home">
               <img src={homeIcon} alt="Inicio" className="navbar-icon" />
               <span className="navbar-text">Bienvenida</span>
             </Link>

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between; /* Espacio entre logos */
   align-items: center; /* Alinear verticalmente en el centro */
-  padding: 5px 20px;
+  padding: 0 20px;
   background-color: #0056b3; /* Color azul */
   height: auto;
   width: 100%; /* Ocupar todo el ancho */
@@ -11,58 +11,42 @@
   z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
 }
 
-.cvx {
-  width: 100px; /* Tamaño del logo del CVA */
+.tec-logo, .cvx {
+  display: inline-block;
+  height: 50px; /* Aseguramos que ambas imágenes tengan la misma altura */
+  width: auto; /* Permitimos que el ancho sea automático para mantener la proporción */
+  object-fit: contain; /* Aseguramos que las imágenes mantengan sus proporciones */
+  margin: 0; /* Removemos cualquier margen residual */
+  padding: 5px; /* Removemos padding */
 }
 
 .tec-logo {
-  width: 150px; /* Tamaño del logo del Tec */
-  padding-right: 30px;
+  max-width: 200px; /* Limita el ancho para mantener proporciones */
 }
 
-/* Media query para pantallas pequeñas */
+.cvx {
+  max-width: 250px; /* Limita el ancho del CVA logo */
+  padding-right: 50px;
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
-  .cvx {
-    width: 80px; /* Reducir tamaño en pantallas pequeñas */
+  .header {
+    flex-direction: column; /* Cambiamos la dirección a columna */
+    align-items: center; /* Centramos los elementos */
   }
 
-  .tec-logo {
-    width: 100px; /* Reducir tamaño en pantallas pequeñas */
-    padding-right: 10px;
+  .tec-logo, .cvx {
+    height: 50px; /* Reducimos el tamaño de los logos para pantallas pequeñas */
+    max-width: 150px;
   }
 
-  h1 {
-    font-size: 1em; /* Ajustar el tamaño del texto */
-  }
 }
 
-.title-container {
-  text-align: center;
-  flex-grow: 1; /* Ocupa el espacio restante entre los logos */
-  padding: 0 10px;
-}
-
-/* Clase typing: Aplica el cursor parpadeante solo mientras se escribe */
-.typing {
-  border-right: 2px solid white; /* Cursor parpadeante */
-  animation: blink-caret 0.75s step-end infinite;
-}
-
-h1 {
-  color: white;
-  font-size: 1.2em;
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-}
-
-/* Animación para el cursor parpadeante */
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: white;
+/* Estilos para pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 480px) {
+  .tec-logo, .cvx {
+    height: 35px; /* Reducimos aún más el tamaño de los logos */
+    max-width: 120px;
   }
 }

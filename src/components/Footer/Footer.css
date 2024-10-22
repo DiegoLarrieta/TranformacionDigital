@@ -6,8 +6,9 @@
   align-items: center;
   padding: 8px 20px; /* Reducir el padding para hacer el footer más compacto */
   font-size: 12px; /* Texto pequeño */
-  width: 100%;
-  position: fixed; /* Fijo en la parte inferior */
+  width: calc(100% - 60px); /* Resta el ancho del navbar (ajusta a 60px si es el ancho del navbar) */
+  margin-left: 60px; /* Espacio equivalente al navbar para evitar superposición */
+  position: relative; /* Fijo en la parte inferior */
   bottom: 0;
   z-index: 1000;
   height: auto; /* Ajusta el alto según el contenido */
@@ -43,6 +44,8 @@
     flex-direction: column;
     text-align: center;
     padding: 8px; /* Menor padding para pantallas pequeñas */
+    width: 100%; /* Para pantallas pequeñas ocupar todo el ancho */
+    margin-left: 0; /* Sin margen para pantallas pequeñas */
   }
 
   .footer-right {

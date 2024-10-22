@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+  .mapa-conceptual-container {
+    padding: 10px;
+  }
+
+  .mapa-subtitle {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .adelante-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .mapa-image img {
+    max-width: 100%; /* Que ocupe todo el ancho disponible en pantallas pequeñas */
+  }
+}

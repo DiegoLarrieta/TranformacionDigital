@@ -4,7 +4,7 @@ import logotectransparente from "./logos/logotec_transparente_gris.png";
 import logotipocva from "./logos/LOGOTIPO CVA BLANCO.png";
 
 import contactoIcon from "./icons/contact.svg";
-import creditosIcon from "./icons/creditos.svg";
+import creditosIcon from "./icons/creditos.png";
 import cursosIcon from "./icons/cursos.svg";
 import homeIcon from "./icons/home.svg";
 import mapaIcon from "./icons/mapa.svg";

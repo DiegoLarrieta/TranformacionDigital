@@ -1,0 +1,60 @@
+.bienvenida-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.hero {
+  background-image: url('../assets/courseimg/tu-imagen.jpg'); /* Coloca la ruta correcta de la imagen */
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Oscurecer la imagen para que el texto sea legible */
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.texto-informativo {
+  margin-top: 20px;
+}
+
+.texto-informativo h2 {
+  color: #8B4513; /* Un color similar al mostrado en la imagen */
+  font-size: 24px;
+}
+
+.texto-informativo p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.boton-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn-continuar {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-continuar:hover {
+  background-color: #0056b3;
+}
