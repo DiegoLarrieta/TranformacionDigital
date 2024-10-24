@@ -4,7 +4,7 @@ import Home from '../../pages/Home/Home';
 import Objetivos from '../../pages/Objetivos/Objetivos';
 import MapaConceptual from '../../pages/MapaConceptual/MapaConceptual'
 import Metodologia from '../../pages/Metodologia/Metodologia';
-import Temario from '../../pages/Temario/Temario';
+import Modulos from '../../pages/Modulos/Modulos';
 
 import './MainContent.css';
 // Aceptar children como prop
@@ -18,7 +18,7 @@ const MainContent: React.FC<{ children?: React.ReactNode }> = ({ children }) => 
         <Route path="/objetivos" element={<Objetivos />} />
         <Route path="/mapa" element={<MapaConceptual />} />
         <Route path="/metodologia" element={<Metodologia />} />
-        <Route path="/modulos" element={<Temario />} />
+        <Route path="/modulos" element={<Modulos />} />
         {/* Agrega aquí más rutas conforme se creen nuevas secciones */}
       </Routes>
     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import MainContent from '../../components/Main/MainContent';
 import TemarioCard from './TemarioCard';
 import BorregoAvatar from '../../components/AvatarBorrego'; // Importación sin llaves
 

@@ -17,6 +17,10 @@ import htmlcss from "./courseimg/htmlcss.jpeg";
 import javascript from "./courseimg/JavaScript.png";
 import reacttypescript from "./courseimg/reacttypescript.jpg";
 
+import programacion from "./objetivos/programacionI.jpg"
+
+import mapaConceptual from "./mapaConceptual/mapaConceptual.png"
+
 import borregoavatarimg from "./avatar/borregoavatar.png";
 
 export {
@@ -36,5 +40,7 @@ export {
   htmlcss,
   javascript,
   reacttypescript,
+  programacion,
+  mapaConceptual,
   borregoavatarimg,
 };

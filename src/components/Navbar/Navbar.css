@@ -17,6 +17,7 @@
 /* Expansión del navbar al hacer hover */
 .navbar:hover {
   width: 200px; /* Aumenta el ancho al hacer hover */
+  z-index: 1100; /* Mayor z-index para que se superponga sobre el footer también */
 }
 
 /* Lista de ítems dentro del navbar */

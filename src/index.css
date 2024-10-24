@@ -24,10 +24,12 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  height: 100vh;
+  width: 100vw; /* Asegura que ocupe todo el ancho de la pantalla */
+  overflow-x: hidden; /* Evita el scroll horizontal */
+  background-color: #242424; /* Si necesitas mantener el color de fondo */
+  display: block; /* Quitar flex y colocar block, para que se comporte normalmente */
 }
 
 h1 {

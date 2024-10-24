@@ -1,6 +1,8 @@
 .bienvenida-container {
   font-family: Arial, sans-serif;
   padding: 20px;
+  min-height: calc(100vh - 80px - 50px); /* Altura del header y footer */
+  box-sizing: border-box;
 }
 
 .hero {

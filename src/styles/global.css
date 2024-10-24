@@ -1,35 +1,45 @@
+/* Ajustamos la estructura general */
 .app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Para asegurar que el contenido ocupe al menos el tamaño de la pantalla */
+  height: 100%;
+  overflow: hidden; /* Evita scroll extra */
 }
 
 .main-layout {
   display: flex;
-  flex-grow: 1; /* Permite que el contenido crezca y empuje al footer hacia abajo */
+  flex-grow: 1; /* Permite que el contenido principal crezca */
+  flex-direction: row; /* Alineación horizontal */
+  overflow: hidden; /* Evitamos barras de desplazamiento adicionales */
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Asegura que la sección del contenido se extienda correctamente */
+/* Ajustamos el navbar para que sea fijo a la izquierda */
+.navbar {
+  width: 60px; /* Fijamos el ancho del navbar */
+  position: fixed;
+  top: 60px;
+  left: 0;
+  height: calc(100vh - 60px);
+  z-index: 1000; /* Aseguramos que esté encima del contenido */
+  background-color: #2c2f33; /* El color de fondo del navbar */
 }
 
-main {
+/* Ajustamos el main-content para que respete el navbar */
+.main-content {
   flex-grow: 1;
-  overflow-y: auto; /* Permite el scroll si el contenido es largo */
-  padding: 20px; /* Añade espacio alrededor del contenido */
+  margin-left: 30px; /* Espacio para el navbar, este valor depende del ancho del navbar */
+  overflow-y: auto; /* Permite solo un scroll en el contenido principal */
 }
 
-footer {
-  height: auto;
-  width: 100%;
-  position: relative;
-  bottom: 0;
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-size: 12px;
-  font-weight: bold;
+/* El footer debe permanecer siempre visible al final de la página */
+.footer {
+  flex-shrink: 0;
+  margin-left: 60px; /* Aseguramos que el footer también respete el espacio del navbar */
+}
+
+/* HTML, body y root se ajustan al 100% de la altura */
+html, body, #root {
+  height: 100%; /* Asegura que el root y el body ocupen el 100% */
+  margin: 0;
+  overflow: hidden; /* Para prevenir scroll innecesario en body */
 }

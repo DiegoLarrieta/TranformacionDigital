@@ -1,0 +1,41 @@
+.modulos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.avatar-borrego {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.titulo-niveles {
+  font-size: 24px;
+  color: #0056b3;
+  margin-bottom: 30px;
+}
+
+.nivel-item {
+  background-color: #f0f0f0;
+  padding: 15px;
+  width: 100%;
+  max-width: 500px;
+  margin: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.nivel-item.desbloqueado {
+  background-color: #00c853;
+}
+
+.nivel-item.bloqueado {
+  background-color: #ccc;
+}
+
+.nivel-item:hover {
+  background-color: #bdbdbd;
+}

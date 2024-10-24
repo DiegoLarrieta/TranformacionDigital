@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css'; // Archivo CSS para estilos específicos
 import { useNavigate } from 'react-router-dom';
 import MainContent from '../../components/Main/MainContent'; // Importa MainContent
+import BotonNavegacion from '../../components/Button/BotonNavegacion';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -37,9 +38,7 @@ const Home = () => {
 
         {/* Botón de continuar */}
         <div className="boton-container">
-          <button className="btn-continuar" onClick={handleContinue}>
-            Continuar
-          </button>
+          <BotonNavegacion texto="Continuar" ruta="/objetivos" /> 
         </div>
       </div>
     </MainContent>
