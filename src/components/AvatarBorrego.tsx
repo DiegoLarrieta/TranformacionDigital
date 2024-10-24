@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './AvatarBorrego.css'; // Importa los estilos
+import './AvatarBorrego.css'; 
 import { borregoavatarimg } from '../assets';
 
 // Define los bancos de frases
@@ -9,64 +9,43 @@ const frasesInicio = [
   "Este es el comienzo de un gran viaje. ¡Vamos a por ello!"
 ];
 
-const frasesProgreso = [
-  "¡Lo estás haciendo muy bien! Sigue así.",
-  "Cada paso te lleva más cerca de tus objetivos.",
-  "¡Gran trabajo! El progreso que has hecho es impresionante."
-];
+// Añadir la interfaz para aceptar la prop `style`
+interface BorregoAvatarProps {
+  etapa: 'inicio' | 'progreso' | 'motivacion';
+}
 
-const frasesMotivacion = [
-  "No te rindas, el esfuerzo vale la pena.",
-  "Recuerda, el éxito es la suma de pequeños esfuerzos repetidos cada día.",
-  "¡Estás más cerca de lo que crees!"
-];
-
-// Función para elegir una frase aleatoria de un banco
-const getFraseAleatoria = (bancoFrases: string[]) => {
-  const index = Math.floor(Math.random() * bancoFrases.length);
-  return bancoFrases[index];
-};
-
-const BorregoAvatar = ({ etapa }: { etapa: 'inicio' | 'progreso' | 'motivacion' }) => {
+const BorregoAvatar: React.FC<BorregoAvatarProps> = ({ etapa }) => {
   const [frase, setFrase] = useState('');
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true); // Hacer que el avatar esté visible por defecto
 
   useEffect(() => {
-    let bancoFrases;
-    switch (etapa) {
-      case 'inicio':
-        bancoFrases = frasesInicio;
-        break;
-      case 'progreso':
-        bancoFrases = frasesProgreso;
-        break;
-      case 'motivacion':
-        bancoFrases = frasesMotivacion;
-        break;
-      default:
-        bancoFrases = frasesInicio;
-    }
-
-    // Selecciona una frase aleatoria cada vez que cambie la etapa
-    const nuevaFrase = getFraseAleatoria(bancoFrases);
+    const bancoFrases = frasesInicio;
+    const nuevaFrase = bancoFrases[Math.floor(Math.random() * bancoFrases.length)];
     setFrase(nuevaFrase);
-    setVisible(true); // Muestra el avatar
-
-    // Ocultar el avatar después de 5 segundos
-    const timeout = setTimeout(() => {
-      setVisible(false);
-    }, 5000);
-    return () => clearTimeout(timeout); // Limpia el timeout al desmontar
-    
   }, [etapa]);
 
+  const handleClose = () => {
+    setVisible(false); // Cerrar el avatar cuando se haga clic en la flecha
+  };
+
   return (
-    <div className={`avatar-container ${visible ? 'visible' : ''}`}>
-      <div className="thought-bubble">
-        <p>{frase}</p>
-      </div>
-      <img src={borregoavatarimg} alt="Avatar Motivacional" className="avatar-image" />
-    </div>
+    <>
+      {visible && (
+        <>
+          {/* Overlay que cubre la pantalla */}
+          <div className="overlay" />
+
+          {/* Avatar y mensaje */}
+          <div className="avatar-container">
+            <div className="thought-bubble">
+              <p>{frase}</p>
+            </div>
+            <img src={borregoavatarimg} alt="Avatar Motivacional" className="avatar-image" />
+            <button className="close-btn" onClick={handleClose}>→</button>
+          </div>
+        </>
+      )}
+    </>
   );
 };
 
