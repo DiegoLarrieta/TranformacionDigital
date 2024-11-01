@@ -1,74 +1,49 @@
-import React, { useState } from 'react';
-import MainContent from '../../components/Main/MainContent';
+import React from 'react';
 import ModuloCard from './ModuloCard';
-import BorregoAvatar from '../../components/AvatarBorrego';
-import BotonNavegacion from '../../components/Button/BotonNavegacion';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate para redirecciones
-import './Modulos.css'; // Asegúrate de tener los estilos adecuados
-
-import { 
-  htmlcss,
-  javascript,
-  fullstack,
-  reacttypescript
-} from '../../assets';
+import MainContent from '../../components/Main/MainContent';
+import { htmlcss, javascript } from '../../assets'; // Asegúrate de que estas rutas sean correctas
 
 const Modulos = () => {
-  const [nivelActual, setNivelActual] = useState(1); // Controlar el progreso del usuario
-  const navigate = useNavigate(); // Hook de navegación
-
-  // Módulos del curso con la lógica de bloqueado/desbloqueado
-  const modules = [
-    { id: 1, name: 'Módulo 1: Camino a fullstack', image: fullstack, completado: false },
-    { id: 2, name: 'Módulo 2: Mis primeros pasos', image: htmlcss, completado: false },
-    { id: 3, name: 'Módulo 3: JavaScript', image: javascript, completado: false },
-    { id: 4, name: 'Módulo 4: Front Avanzado', image: reacttypescript, completado: false },
-    // Agrega más módulos según sea necesario
-  ];
-
-  const manejarAvance = (id: number) => {
-    if (id === nivelActual) {
-      setNivelActual(nivelActual + 1);
-    }
-    // Redirige al módulo 1 cuando se haga clic en él
-    if (id === 1) {
-      navigate('/modulo1');
-    }
-  };
-
-  const manejarNavegacion = () => {
-    navigate('/modulo1'); // Redirige al módulo 1 al hacer clic en el botón
+  const moduleData = {
+    title: 'Learn Node.js',
+    level: 'Intermediate',
+    time: '5 hours',
+    projects: 2,
+    prerequisites: '2',
+    includes: [
+      'AI assistance for guided coding help',
+      'Projects to apply new skills',
+      'Quizzes to test your knowledge',
+      'A certificate of completion',
+    ],
+    syllabus: [
+      {
+        title: 'Welcome to Learn Node.js',
+        description: 'A brief overview of what you will learn in the Learn Node.js course.',
+        items: [
+          { type: 'Lesson', title: 'Esto es una lectura' },
+          { type: 'Quiz', title: 'Esto es un test' },
+          { type: 'Lock', title: 'Esto es una prueba final lock' },
+        ],
+        image: htmlcss, // Imagen específica para este módulo
+      },
+      {
+        title: 'What is the Back-End?',
+        description: 'Explore the building blocks of back-end web architecture.',
+        items: [
+          { type: 'Lesson', title: 'What is the Back-end?' },
+          { type: 'Article', title: 'JavaScript for Node.js' },
+          { type: 'Article', title: 'What Is JSON?' },
+        ],
+        image: javascript, // Otra imagen para este módulo
+      },
+    ],
   };
 
   return (
     <MainContent>
-      <div className="modulos-container">
-        <h1>Temario del Curso</h1>
-
-        {/* Renderiza el avatar solo una vez, fuera del map */}
-        <BorregoAvatar etapa="inicio" /> {/* Muestra frases de inicio */}
-
-        <div className="modulos-grid">
-          {/* Mapea y renderiza las tarjetas de los módulos */}
-          {modules.map(module => (
-            <div
-              key={module.id}
-              className={`modulo-card-container ${nivelActual >= module.id ? 'desbloqueado' : 'bloqueado'}`}
-              onClick={() => manejarAvance(module.id)}
-            >
-              <ModuloCard
-                moduleName={module.name}
-                moduleImage={module.image}
-              />
-              {nivelActual > module.id && <span className="completado">✔️ Completado</span>}
-            </div>
-          ))}
-        </div>
-
-        {/* Botón de continuar */}
-        <div className="boton-container">
-          <BotonNavegacion texto="Continuar" ruta="/modulo1" /> 
-        </div>
+      <div className="modules-container">
+        <ModuloCard {...moduleData} />
       </div>
     </MainContent>
   );

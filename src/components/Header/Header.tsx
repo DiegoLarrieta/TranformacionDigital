@@ -1,22 +1,49 @@
+import React, { useState } from 'react';
 import './header.css';
+import Navbar from '../Navbar/Navbar';
 import {
-  //isotipoBlanco,
-  //logolargo,
   logotectransparente,
   logotipocva,
+  hamburgerMenuIcon,
+  homeIcon,
+  cursosIcon,
 } from '../../assets';
 
 const Header = () => {
+  const [isNavbarVisible, setNavbarVisible] = useState(false);
+
+  const toggleNavbar = () => {
+    setNavbarVisible(!isNavbarVisible);
+  };
+
   return (
     <header className="header">
-      {/* Tec logo ahora está a la izquierda */}
+      {/* Logo del Tec a la izquierda */}
       <img src={logotectransparente} className="tec-logo" alt="Logo Tec" />
 
-      {/* Quitamos el título central */}
-      <div className="spacer"></div> {/* Usamos un div vacío para el espaciado */}
+      {/* Íconos de Home, Menú de hamburguesa y Módulos */}
+      <div className="header-icons">
+        {/* Icono de Home, visible solo en pantallas grandes */}
+        <div className="icon-button home-icon">
+          <img src={homeIcon} alt="Home" />
+        </div>
 
-      {/* CVA logo ahora está a la derecha */}
+        {/* Menú de hamburguesa en el centro */}
+        <div className="icon-button" onClick={toggleNavbar}>
+          <img src={hamburgerMenuIcon} alt="Menú" />
+        </div>
+
+        {/* Icono de Módulos, visible solo en pantallas grandes */}
+        <div className="icon-button modules-icon">
+          <img src={cursosIcon} alt="Módulos" />
+        </div>
+      </div>
+
+      {/* Logo de CVA a la derecha */}
       <img src={logotipocva} className="cvx" alt="Logo CVA" />
+
+      {/* Navbar horizontal que aparece al hacer clic en el menú de hamburguesa */}
+      {isNavbarVisible && <Navbar className="visible" />}
     </header>
   );
 };

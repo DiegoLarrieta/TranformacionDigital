@@ -11,6 +11,13 @@ import mapaIcon from "./icons/mapa.svg";
 import metodologiasIcon from "./icons/metodologia.svg";
 import politicasIcon from "./icons/politicas.svg";
 import objetivosIcon from "./icons/target.svg"; 
+import hamburgerMenuIcon from "./icons/hamburgermenu.svg"
+
+import levelIcon from "./icons/level-icon.png"
+import clockIcon from "./icons/clock-icon.png"
+import testIcon from "./icons/task-icon.png"
+import lectureIcon from "./icons/lecture-icon.png"
+import lockIcon from "./icons/lock-icon.png"
 
 import fullstack from "./courseimg/fullstack.webp";
 import htmlcss from "./courseimg/htmlcss.jpeg";
@@ -36,6 +43,12 @@ export {
   metodologiasIcon,
   politicasIcon,
   objetivosIcon,
+  lectureIcon,
+  lockIcon,
+  hamburgerMenuIcon,
+  testIcon,
+  clockIcon,
+  levelIcon,
   fullstack,
   htmlcss,
   javascript,

@@ -1,7 +1,9 @@
 import React, { useState, useRef } from 'react';
 import MainContent from '../../../components/Main/MainContent';
+import BotonNavegacion from '../../../components/Button/BotonNavegacion'; // Importamos el botón de navegación
+import { useNavigate } from 'react-router-dom'; // Para redirigir
 
-const Modulo1: React.FC = () => {
+const Modulo1Test: React.FC = () => {
   const [code, setCode] = useState(`<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -75,12 +77,22 @@ const Modulo1: React.FC = () => {
 </html>`);
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [completado, setCompletado] = useState(false);
+  const navigate = useNavigate();
 
   const runCode = () => {
     if (iframeRef.current) {
       const iframe = iframeRef.current;
       iframe.srcdoc = code;
     }
+  };
+
+  const finalizarCurso = () => {
+    // Marca el módulo como completado
+    setCompletado(true);
+    
+    // Redirige al módulo principal
+    navigate('/modulos');
   };
 
   return (
@@ -129,9 +141,17 @@ const Modulo1: React.FC = () => {
             <iframe ref={iframeRef} title="Output" style={{ width: '100%', height: '100%', border: 'none', backgroundColor: '#fff', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }} />
           </div>
         </div>
+
+        {/* Botón de Finalizar Curso */}
+        <div style={{ marginTop: '20px', textAlign: 'center' }}>
+          <BotonNavegacion
+            texto="Finalizar Curso"
+            onClick={finalizarCurso} // Llama la función para finalizar el curso
+          />
+        </div>
       </div>
     </MainContent>
   );
 };
 
-export default Modulo1;
+export default Modulo1Test;

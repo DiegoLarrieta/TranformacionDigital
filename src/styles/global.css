@@ -9,32 +9,24 @@
 .main-layout {
   display: flex;
   flex-grow: 1; /* Permite que el contenido principal crezca */
-  flex-direction: row; /* Alineación horizontal */
+  flex-direction: column; /* Alineación verical */
   overflow: hidden; /* Evitamos barras de desplazamiento adicionales */
 }
 
-/* Ajustamos el navbar para que sea fijo a la izquierda */
-.navbar {
-  width: 60px; /* Fijamos el ancho del navbar */
-  position: fixed;
-  top: 60px;
-  left: 0;
-  height: calc(100vh - 60px);
-  z-index: 1000; /* Aseguramos que esté encima del contenido */
-  background-color: #2c2f33; /* El color de fondo del navbar */
-}
+
 
 /* Ajustamos el main-content para que respete el navbar */
 .main-content {
   flex-grow: 1;
-  margin-left: 30px; /* Espacio para el navbar, este valor depende del ancho del navbar */
   overflow-y: auto; /* Permite solo un scroll en el contenido principal */
+  width: 100%;
+  justify-content: center; /* Centra el contenido */
 }
 
 /* El footer debe permanecer siempre visible al final de la página */
 .footer {
   flex-shrink: 0;
-  margin-left: 60px; /* Aseguramos que el footer también respete el espacio del navbar */
+  width: 100%;
 }
 
 /* HTML, body y root se ajustan al 100% de la altura */

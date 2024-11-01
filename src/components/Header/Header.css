@@ -1,52 +1,56 @@
 .header {
   display: flex;
-  justify-content: space-between; /* Espacio entre logos */
-  align-items: center; /* Alinear verticalmente en el centro */
-  padding: 0 20px;
-  background-color: #0056b3; /* Color azul */
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0056b3;
+  width: 100%;
   height: auto;
-  width: 100%; /* Ocupar todo el ancho */
-  position: fixed; /* Para que quede fijo en la parte superior */
-  top: 0; /* Posición superior fija */
-  z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  padding: 5px; /* Añade espacio arriba/abajo y a los lados */
 }
 
-.tec-logo, .cvx {
-  display: inline-block;
-  height: 50px; /* Aseguramos que ambas imágenes tengan la misma altura */
-  width: auto; /* Permitimos que el ancho sea automático para mantener la proporción */
-  object-fit: contain; /* Aseguramos que las imágenes mantengan sus proporciones */
-  margin: 0; /* Removemos cualquier margen residual */
-  padding: 5px; /* Removemos padding */
-}
-
-.tec-logo {
-  max-width: 200px; /* Limita el ancho para mantener proporciones */
-}
-
+.tec-logo,
 .cvx {
-  max-width: 250px; /* Limita el ancho del CVA logo */
-  padding-right: 50px;
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 20px; /* Espacio alrededor de los logos */
 }
 
-/* Estilos para pantallas pequeñas (móviles) */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column; /* Cambiamos la dirección a columna */
-    align-items: center; /* Centramos los elementos */
-  }
-
-  .tec-logo, .cvx {
-    height: 50px; /* Reducimos el tamaño de los logos para pantallas pequeñas */
-    max-width: 150px;
-  }
-
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espacio entre íconos */
+  margin-right: 20px; /* Añade un margen derecho para separarlo del borde */
 }
 
-/* Estilos para pantallas muy pequeñas (teléfonos pequeños) */
-@media (max-width: 480px) {
-  .tec-logo, .cvx {
-    height: 35px; /* Reducimos aún más el tamaño de los logos */
-    max-width: 120px;
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.3s;
+  padding: 10px; /* Espacio adicional alrededor del ícono */
+}
+
+.icon-button:hover {
+  color: #7b61ff; /* Cambia el color a morado al hacer hover */
+}
+
+/* Alineación específica para pantalla grande */
+@media (min-width: 1024px) {
+  .home-icon,
+  .modules-icon {
+    display: block;
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 1024px) {
+  .home-icon,
+  .modules-icon {
+    display: none;
   }
 }

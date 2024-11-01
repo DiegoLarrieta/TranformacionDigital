@@ -1,80 +1,46 @@
-/* Navbar base */
-.navbar {
-  background-color: #2c2f33;
-  position: fixed;
-  top: 80px; /* Ajuste para que esté justo debajo del header */
-  left: 0;
-  width: 60px; /* Ancho inicial para los íconos */
-  height: calc(100vh - 80px); /* Altura restante después del header */
+/* Estilos adicionales para el navbar cuando es visible */
+.navbar.visible {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 10px 0; /* Aseguramos un pequeño padding en la parte superior e inferior */
-  z-index: 1000;
-  transition: width 0.3s ease;
+  flex-direction: row; /* Alineación horizontal */
+  background-color: #2c2f33; /* Fondo azul claro */
+  position: absolute; /* Para que se despliegue debajo del header */
+  top: 100%; /* Posición debajo del header */
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 900; /* Debajo del header pero encima del resto */
+  justify-content: space-around; /* Distribución uniforme de los elementos */
 }
 
-/* Expansión del navbar al hacer hover */
-.navbar:hover {
-  width: 200px; /* Aumenta el ancho al hacer hover */
-  z-index: 1100; /* Mayor z-index para que se superponga sobre el footer también */
-}
-
-/* Lista de ítems dentro del navbar */
 .navbar-list {
+  display: flex;
+  gap: 20px; /* Espacio entre los elementos */
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Alinea íconos horizontalmente en el centro */
-  height: 100%; /* Ocupa toda la altura */
-  justify-content: space-around; /* Distribuye equitativamente los ítems */
+  width: 100%; /* Asegura que ocupe todo el ancho del navbar */
+  justify-content: space-evenly; /* Distribuye los ítems de forma uniforme */
 }
 
-/* Estilo de cada ítem del navbar */
 .navbar-item {
   display: flex;
-  align-items: center; /* Centra ícono y texto verticalmente */
-  justify-content: center; /* Asegura que el ícono esté centrado horizontalmente */
-  width: 100%; /* El ítem ocupa todo el ancho del navbar */
-  color: white;
-  opacity: 0.7;
-  transition: opacity 0.3s, transform 0.3s ease;
-}
-
-.navbar-item:hover {
-  opacity: 1; /* Aumentar opacidad al hacer hover */
-  transform: scale(1.05); /* Efecto de agrandamiento suave */
-}
-
-/* Estilo de los íconos */
-.navbar-icon {
-  width: 30px; /* Tamaño del ícono */
-  height: 30px;
-  margin-right: 10px; /* Espacio entre el ícono y el texto */
-}
-
-/* Estilo del texto (oculto por defecto) */
-.navbar-text {
-  display: none; /* Ocultar texto por defecto */
-  white-space: nowrap; /* Evitar que el texto se corte */
-}
-
-.navbar:hover .navbar-text {
-  display: inline; /* Mostrar el texto al hacer hover */
-}
-
-/* Asegura que los íconos estén bien alineados y con espacio */
-.navbar-item a {
-  display: flex;
   align-items: center;
-  justify-content: center; /* Íconos centrados */
-  text-decoration: none; /* Quitar el subrayado */
   color: white;
   font-weight: bold;
-  width: 100%; /* El ancho de cada ítem ocupa el navbar completo */
-  padding: 10px 0;
-  transition: all 0.3s ease;
+  transition: color 0.3s, transform 0.3s ease;
 }
 
+.navbar-item:hover, .navbar-item:focus {
+  color: #7b61ff; /* Cambia a morado al hacer hover o focus */
+}
+
+.navbar-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.navbar-text {
+  display: inline;
+  color: white; /* Texto en blanco por defecto */
+}
