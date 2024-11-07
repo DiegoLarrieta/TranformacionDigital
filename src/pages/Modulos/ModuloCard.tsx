@@ -55,7 +55,7 @@ const ModuloCard: React.FC<ModuloCardProps> = ({
       <div className="modulo-header">
         <h2>{title}</h2>
         <p>Learn about the different components of a web application's back-end and explore the Node.js JavaScript runtime environment.</p>
-        <BotonNavegacion texto="Start" ruta="/modulo1/lectura" />
+        <BotonNavegacion texto="Start" ruta="/modulo1/lectura"/>
       </div>
 
       <div className="modulo-details">
