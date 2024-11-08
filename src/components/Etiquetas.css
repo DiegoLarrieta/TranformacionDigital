@@ -1,0 +1,161 @@
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+    min-height: 100vh;
+  }
+  
+  .tab-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    animation: slideDown 0.5s ease-out;
+  }
+  
+  .tab-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    font-weight: 500;
+  }
+  
+  .tab-button:hover {
+    background-color: #f8fafc;
+    border-color: #94a3b8;
+    transform: translateY(-1px);
+  }
+  
+  .tab-button.active {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #2563eb;
+  }
+  
+  .content-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .tag-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .tag-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  .tag-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
+  
+  .tag-number {
+    background-color: #64748b;
+    color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  
+  .tag-content {
+    flex: 1;
+  }
+  
+  .tag-name {
+    font-family: monospace;
+    color: #f97316;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tag-description {
+    color: #475569;
+    line-height: 1.6;
+  }
+  
+  .example-browser {
+    margin-top: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .browser-header {
+    background-color: #f8fafc;
+    padding: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .browser-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+  }
+  
+  .dot-red { background-color: #ef4444; }
+  .dot-yellow { background-color: #f59e0b; }
+  .dot-green { background-color: #22c55e; }
+  
+  .browser-content {
+    padding: 1rem;
+    font-family: monospace;
+    background-color: #f8fafc;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }

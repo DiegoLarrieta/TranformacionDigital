@@ -1,0 +1,229 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  --secondary-gradient: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  --surface-color: #FFFFFF;
+  --background-color: #F8FAFC;
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --text-tertiary: #6B7280;
+  --accent-color: #7C3AED;
+  --success-color: #10B981;
+  --border-color: #E5E7EB;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  
+  .header {
+    background-color: var(--background-color);
+    color: var(--primary-gradient);
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .titleSection h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 0 0 8px 0;
+  }
+  
+  .titleSection h2 {
+    font-size: 1.5rem;
+    color: #2563EB;
+    margin: 0 0 16px 0;
+  }
+  
+  .titleSection p {
+    color: var(--text-primary);
+    margin: 0;
+    text-justify: center;
+  }
+  
+  .stats {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  
+  .statBox {
+    background-color: var(--secondary-gradient);
+    padding: 12px 20px;
+    border-radius: 6px;
+    flex: 1;
+    color:var(--text-secondary);
+  }
+  
+  .statBox span {
+    display: block;
+    color: #888;
+    font-size: 0.875rem;
+  }
+  
+  .statBox strong {
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 4px;
+  }
+  
+  .resetButton {
+    background-color: #3B82F6;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.2s;
+  }
+  
+  .resetButton:hover {
+    background-color: #555;
+  }
+  
+  .instructions {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+  }
+  
+  .instructions h3 {
+    margin: 0 0 16px 0;
+    font-size: 1.25rem;
+  }
+  
+  .instructions ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .instructions li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .instructions li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #888;
+  }
+  
+
+
+  .codeContainer {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    line-height: 1.5;
+  }
+  
+  .codeLine {
+    display: flex;
+    padding: 4px 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: white;
+  }
+  
+  .codeLine:hover {
+    background-color: #2a2a2a;
+  }
+  
+  .lineNumber {
+    width: 50px;
+    text-align: right;
+    padding-right: 16px;
+    color: #666;
+    user-select: none;
+  }
+  
+  .vulnerable {
+    background-color: rgba(255, 100, 100, 0.1);
+  }
+  
+  .incorrect {
+    background-color: rgba(100, 100, 100, 0.1);
+  }
+  
+  .message {
+    padding: 16px;
+    border-top: 1px solid #333;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  
+  .message.success {
+    background-color: var(--surface-color);
+    color: var(--success-color);
+  }
+  
+  .message.error {
+    background-color: #f77878;
+    color: var(--text-primary);
+  }
+  
+  .message pre {
+    margin: 0;
+    white-space: pre-wrap;
+    font-family: inherit;
+  }
+  
+  .successMessage {
+    background-color: rgba(50, 200, 100, 0.1);
+    color: #4caf50;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  @keyframes shake {
+    10%, 90% { transform: translateX(-1px); }
+    20%, 80% { transform: translateX(2px); }
+    30%, 50%, 70% { transform: translateX(-4px); }
+    40%, 60% { transform: translateX(4px); }
+  }
+  
+  .shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .header {
+      padding: 16px;
+    }
+  
+    .titleSection h1 {
+      font-size: 2rem;
+    }
+  
+    .stats {
+      flex-direction: column;
+    }
+  
+    .statBox {
+      width: 100%;
+    }
+  }
