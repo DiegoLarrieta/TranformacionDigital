@@ -1,35 +1,66 @@
-import React from 'react';
-import './Objetivos.css'; // Estilos específicos para la página de Objetivos
-import MainContent from '../../components/Main/MainContent';
-import { programacion } from '../../assets'; // Asegúrate de que la ruta de la imagen sea correcta
+// Objetivos.tsx
+import React, { useEffect, useState } from 'react';
+import './Objetivos.css'; // Asegúrate de incluir los estilos actualizados
 import BotonNavegacion from '../../components/Button/BotonNavegacion';
 
+const habilidades = [
+  "Estructurar páginas web utilizando elementos HTML",
+  "Estilizar los elementos de tus páginas con CSS",
+  "Comprender conceptos básicos de programación en JavaScript",
+  "Programar en JavaScript usando scripts y funciones",
+  "Publicar proyectos web en Internet",
+  "Aplicar estándares y buenas prácticas en el desarrollo web",
+  "Manejar herramientas para el desarrollo web, incluyendo editores de código y herramientas del navegador",
+];
+
 const Objetivos = () => {
+  const [progressValues, setProgressValues] = useState(habilidades.map(() => 0));
+
+  useEffect(() => {
+    const intervals = habilidades.map((_, index) => {
+      return setInterval(() => {
+        setProgressValues((prevValues) => {
+          const newValues = [...prevValues];
+          if (newValues[index] < 100) { // Límite al 100%
+            newValues[index] += 1;
+          }
+          return newValues;
+        });
+      }, 20);
+    });
+
+    return () => intervals.forEach(clearInterval);
+  }, []);
+
   return (
-    <MainContent> {/* Contenido dentro de la estructura general */}
-      <div className="objetivos-container">
-        {/* Imagen a la izquierda */}
-        <div className="objetivos-image-container">
-          <img src={programacion} alt="Programación" className="objetivos-image" />
-        </div>
-        
-        {/* Texto a la derecha */}
-        <div className="objetivos-text-container">
-          <h2>Resultados de aprendizaje</h2>
-          <p>Se espera que al finalizar el curso, aprendas:</p>
-          <ul>
-            <li>Entender los fundamentos de la programación.</li>
-            <li>Desarrollar habilidades en algoritmos y estructuras de datos.</li>
-            <li>Aplicar estos conocimientos en el desarrollo de aplicaciones.</li>
-          </ul>
-          
-          {/* Botón de continuar */}
-          <div className="boton-container">
-            <BotonNavegacion texto="Adelante" ruta="/mapa" /> {/* Navegación a la siguiente página */}
-          </div>
-        </div>
+    <div className="objetivos-card"> {/* Aplicamos un contenedor de tarjeta */}
+      <h2>Resultados de Aprendizaje</h2>
+      <p>Se espera que al finalizar el curso, tengas competencias en:</p>
+      
+      <ul className="objetivos-list">
+        {habilidades.map((habilidad, index) => (
+          <li key={index} className="objetivo-item">
+            {habilidad}
+            <div className="progress-bar-container">
+              <div className="progress-bar">
+                <div
+                  className="progress-bar-fill"
+                  style={{ width: `${progressValues[index]}%` }}
+                ></div>
+              </div>
+              <span className="progress-percentage">{progressValues[index]}%</span>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <p>Todo lo anterior te permitirá desarrollar competencias para tu crecimiento profesional y personal.</p>
+      <p>Esperamos que estés ansioso por comenzar a aprender.</p>
+
+      <div className="boton-container">
+        <BotonNavegacion texto="Adelante" ruta="/mapa" />
       </div>
-    </MainContent>
+    </div>
   );
 };
 

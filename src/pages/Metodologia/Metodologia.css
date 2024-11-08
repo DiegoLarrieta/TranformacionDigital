@@ -1,81 +1,82 @@
 .metodologia-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 20px;
 }
 
 .metodologia-content {
-  display: flex;
-  max-width: 1200px;
-  width: 100%;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.metodologia-image img {
-  width: 500px; /* Ajusta según el tamaño de la imagen */
-  border-radius: 8px;
-  margin-right: 20px;
+.metodologia-text h2 {
+  color: #333;
+  margin-bottom: 15px;
 }
 
-.metodologia-text {
-  flex-grow: 1;
-}
-
-h2 {
-  color: #0d47a1;
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 16px;
+.metodologia-text p {
+  color: #555;
   line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.highlight-box {
-  background-color: #fff3cd;
-  border-left: 5px solid #ffc107;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-.highlight-box ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-ul {
-  padding-left: 20px;
-  margin-bottom: 20px;
-}
-
-ul li {
   margin-bottom: 10px;
 }
 
-.strong {
+.recomendaciones-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.recomendaciones-list li {
+  position: relative;
+  color: #555;
   font-weight: bold;
+  padding-left: 20px;
+  opacity: 0;
+  animation: fadeInGold 1s ease-in-out forwards;
+}
+
+/* Animación de color dorado */
+@keyframes fadeInGold {
+  0% { color: #555; opacity: 0; }
+  50% { color: #555; opacity: 1; }
+  100% { color: gold; opacity: 1; }
+}
+
+/* Agregar retraso secuencial para cada elemento */
+.recomendaciones-list li:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.recomendaciones-list li:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.recomendaciones-list li:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.recomendaciones-list li:nth-child(4) {
+  animation-delay: 2s;
 }
 
 .button-container {
+  text-align: center;
   margin-top: 20px;
 }
 
 .adelante-button {
-  background-color: #007bff;
+  background-color: #0056b3;
   color: white;
-  border: none;
   padding: 10px 20px;
   font-size: 16px;
-  border-radius: 4px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .adelante-button:hover {
-  background-color: #0056b3;
+  background-color: #003d7a;
 }

@@ -13,14 +13,19 @@ import {
 } from '../../assets';
 
 interface NavbarProps {
-  className?: string; // Hacer `className` opcional
+  className?: string;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ className }) => {
+const Navbar: React.FC<NavbarProps> = ({ className, onMouseEnter, onMouseLeave }) => {
   return (
-    <nav className={`navbar ${className || ''}`}> {/* Usa la clase adicional aquí */}
+    <nav
+      className={`navbar ${className || ''}`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <ul className="navbar-list">
-        {/* Items de navegación */}
         <li className="navbar-item">
           <Link to="/home">
             <img src={homeIcon} alt="Inicio" className="navbar-icon" />

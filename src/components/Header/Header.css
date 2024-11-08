@@ -8,18 +8,44 @@
   position: fixed;
   top: 0;
   z-index: 1000;
-  padding: 5px; /* Añade espacio arriba/abajo y a los lados */
+  padding: 15px ; /* Ajuste en el padding para espacio superior e inferior */
 }
 
-.tec-logo,
+/* Navbar container styles */
+.navbar-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 900;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-container.hidden {
+  opacity: 0;
+  pointer-events: none; /* Evita que se puedan hacer clics en el navbar cuando está oculto */
+}
+
+.navbar-container.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .cvx {
-  height: 50px;
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 40px; /* Espacio alrededor de los logos */
+}
+.tec-logo{
+  height: 40px;
   width: auto;
   object-fit: contain;
   margin: 0 20px; /* Espacio alrededor de los logos */
 }
 
 .header-icons {
+  height: 40px;
   display: flex;
   align-items: center;
   gap: 20px; /* Espacio entre íconos */
@@ -40,7 +66,7 @@
 }
 
 /* Alineación específica para pantalla grande */
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
   .home-icon,
   .modules-icon {
     display: block;
@@ -48,9 +74,120 @@
 }
 
 /* Estilos para pantallas pequeñas */
-@media (max-width: 1024px) {
-  .home-icon,
+@media (max-width: 800px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+
+  /* Ocultar todos los íconos excepto el menú */
+  .home-icon {
+    display: none;
+  }
+
   .modules-icon {
     display: none;
   }
+
+  /* Asegura la posición correcta de los logos y del icono de menú */
+  .tec-logo {
+    margin: 0;
+    order: 1;
+    height: 40px; /* Reduce el tamaño del logo */
+  }
+
+  .cvx {
+    margin: 0;
+    order: 2;
+    height: 40px; /* Reduce el tamaño del logo */
+  }
+
+  .icon-button {
+    order: 3;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .icon-button img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .header-icons {
+    justify-content: flex-end;
+    gap: 10px;
+  }
 }
+
+/* Ocultar logo CVA en pantallas de 550px o menos */
+@media (max-width: 550px) {
+  .cvx {
+    display: none; /* Oculta el logo CVA */
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+  }
+
+  .tec-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    height: 40px;
+  }
+
+  .icon-button {
+    margin-left: auto; /* Envía el icono al extremo derecho */
+    padding: 5px;
+  }
+
+  .icon-button img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.modules-icon {
+  position: relative;
+  width: 50px; /* Ajusta al tamaño deseado */
+  height: 50px; /* Ajusta al tamaño deseado */
+}
+
+/* Efecto de hover para el ícono de módulos */
+.modules-icon .enlarged {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+/* Estilos para la etiqueta de "Módulos" */
+.module-label {
+  font-size: 12px;
+  color: #fff;
+  position: absolute;
+  top: 55px; /* Ajusta para ubicar el texto debajo del ícono sin cambiar el layout */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  text-align: center;
+}
+/* Animación para el despliegue de Navbar */
+.visible {
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

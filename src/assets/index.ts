@@ -2,6 +2,8 @@ import isotipoBlanco from "./logos/ISOTIPO CVA BLANCO.png";
 import logolargo from "./logos/logo_largo.png";
 import logotectransparente from "./logos/logotec_transparente_gris.png";
 import logotipocva from "./logos/LOGOTIPO CVA BLANCO.png";
+import cvabuscador from "./logos/cvabuscador.png"
+
 
 import contactoIcon from "./icons/contact.svg";
 import creditosIcon from "./icons/creditos.png";
@@ -23,10 +25,12 @@ import fullstack from "./courseimg/fullstack.webp";
 import htmlcss from "./courseimg/htmlcss.jpeg";
 import javascript from "./courseimg/JavaScript.png";
 import reacttypescript from "./courseimg/reacttypescript.jpg";
+import htmlcssjavas from "./courseimg/htmlcssjavas.jpeg"
 
 import programacion from "./objetivos/programacionI.jpg"
 
 import mapaConceptual from "./mapaConceptual/mapaConceptual.png"
+import htmlcssjavasmapacon from "./mapaConceptual/Mapa Conceptual Programacion -Transparente.gif"
 
 import borregoavatarimg from "./avatar/borregoavatar.png";
 
@@ -35,6 +39,7 @@ export {
   logolargo,
   logotectransparente,
   logotipocva,
+  cvabuscador,
   contactoIcon,
   creditosIcon,
   cursosIcon,
@@ -51,9 +56,11 @@ export {
   levelIcon,
   fullstack,
   htmlcss,
+  htmlcssjavas,
   javascript,
   reacttypescript,
   programacion,
   mapaConceptual,
+  htmlcssjavasmapacon,
   borregoavatarimg,
 };
