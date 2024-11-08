@@ -1,0 +1,82 @@
+.metodologia-container {
+  padding: 20px;
+}
+
+.metodologia-content {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.metodologia-text h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.metodologia-text p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.recomendaciones-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.recomendaciones-list li {
+  position: relative;
+  color: #555;
+  font-weight: bold;
+  padding-left: 20px;
+  opacity: 0;
+  animation: fadeInGold 1s ease-in-out forwards;
+}
+
+/* Animación de color dorado */
+@keyframes fadeInGold {
+  0% { color: #555; opacity: 0; }
+  50% { color: #555; opacity: 1; }
+  100% { color: gold; opacity: 1; }
+}
+
+/* Agregar retraso secuencial para cada elemento */
+.recomendaciones-list li:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.recomendaciones-list li:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.recomendaciones-list li:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.recomendaciones-list li:nth-child(4) {
+  animation-delay: 2s;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.adelante-button {
+  background-color: #0056b3;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.adelante-button:hover {
+  background-color: #003d7a;
+}

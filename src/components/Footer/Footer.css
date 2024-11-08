@@ -1,51 +1,51 @@
 .footer {
-  background-color: #000000; /* Fondo negro */
-  color: white; /* Texto blanco */
+  background-color: #000000;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 20px; /* Reducir el padding para hacer el footer más compacto */
-  font-size: 12px; /* Texto pequeño */
-  width: 100%;
-  position: fixed; /* Fijo en la parte inferior */
-  bottom: 0;
-  z-index: 1000;
-  height: auto; /* Ajusta el alto según el contenido */
-  font-weight: bold; /* Aumentar peso del texto */
+  padding: 6px 15px;
+  font-size: 10px;
+  width: 100%; /* El ancho completo del footer */
+  height: auto;
+  font-weight: bold;
+  position: static; /* Asegúrate de que no esté en relative o fixed */
+  box-sizing: border-box;
 }
 
-.footer-left {
-  display: flex;
-  flex-direction: column;
-  line-height: 0.5; /* Reducir el espacio entre renglones */
-  font-weight: bold; /* Aumentar peso del texto */
+.footer-left p {
+  margin: 2px 0;
+  line-height: 1.1;
+  font-size: 10px;
 }
 
 .footer-right {
   display: flex;
-  gap: 10px; /* Espacio entre enlaces */
-  padding-right: 30px; /* Reducir padding a la derecha para que los menús se muevan a la izquierda */
-  font-weight: bold; /* Aumentar peso del texto */
+  gap: 8px;
+  padding-right: 20px;
 }
 
 .footer-link {
-  color: #007bff; /* Azul para los enlaces */
+  color: #007bff;
   text-decoration: none;
+  font-size: 10px;
 }
 
 .footer-link:hover {
-  text-decoration: underline; /* Subrayado al pasar el mouse */
+  text-decoration: underline;
 }
 
-/* Ajustar en pantallas más pequeñas */
+/* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;
     text-align: center;
-    padding: 8px; /* Menor padding para pantallas pequeñas */
+    padding: 6px;
+    width: 100%;
+    margin-left: 0;
   }
 
   .footer-right {
-    margin-top: 8px;
+    margin-top: 4px;
   }
 }

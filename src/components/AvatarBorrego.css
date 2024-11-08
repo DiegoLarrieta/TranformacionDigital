@@ -1,39 +1,67 @@
+/* Overlay que cubre toda la pantalla y oscurece el fondo */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* Filtro oscuro */
+  z-index: 999; /* Debe estar debajo del avatar */
+}
+
+/* El contenedor del avatar */
 .avatar-container {
-  position: fixed; /* Para que el avatar sea flotante */
-  top: 20px; /* Ajusta la posición vertical (más cerca de la parte superior) */
-  right: 20px; /* Ajusta la posición horizontal */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  align-items: flex-end;
-  opacity: 0; /* Inicialmente oculto */
-  transition: opacity 0.5s ease; /* Transición para la aparición */
-  z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
 }
 
-.avatar-container.visible {
-  opacity: 1; /* Hacer visible el avatar */
-}
-
+/* Imagen del avatar */
 .avatar-image {
-  width: 80px; /* Ajusta el tamaño del avatar según sea necesario */
-  height: 80px; /* Ajusta el tamaño del avatar según sea necesario */
-  border-radius: 50%; /* Hace que el avatar sea circular */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
+/* Burbuja de pensamiento */
 .thought-bubble {
-  background-color: black; /* Fondo negro para la burbuja de pensamiento */
-  color: white; /* Texto en blanco */
-  border-radius: 10px; /* Bordes redondeados */
-  padding: 10px; /* Espaciado interno */
-  position: relative; /* Posicionamiento para la burbuja */
-  margin-left: 10px; /* Espaciado entre el avatar y la burbuja */
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .thought-bubble::after {
   content: '';
   position: absolute;
-  bottom: 100%; /* Conectar la burbuja con el avatar */
-  left: 20%; /* Ajusta según el diseño */
-  border-width: 5px; /* Ancho de la flecha */
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent black transparent; /* Triángulo apuntando hacia arriba */
+  border-color: transparent transparent black transparent;
+}
+
+/* Botón de cierre con flecha */
+.close-btn {
+  background-color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
 }

@@ -1,0 +1,58 @@
+.modulo14-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: black;
+}
+
+h2 {
+  color: #003366;
+}
+
+.content-section {
+  margin-bottom: 20px;
+}
+
+.content-section h3 {
+  color: #003366;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.carousel-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.carousel-instruction {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-image {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.carousel-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  color: #003366;
+  transition: color 0.3s;
+}
+
+.carousel-button:hover {
+  color: #0056b3;
+}
