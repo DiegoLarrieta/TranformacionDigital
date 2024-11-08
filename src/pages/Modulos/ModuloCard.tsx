@@ -7,7 +7,7 @@ interface SyllabusItem {
   title: string;
   description: string;
   items: { type: string; title: string }[];
-  image: string; // Imagen específica para cada módulo
+  image: string;
 }
 
 interface ModuloCardProps {
@@ -18,6 +18,7 @@ interface ModuloCardProps {
   prerequisites: string;
   syllabus: SyllabusItem[];
   includes: string[];
+  includesComponent?: React.ReactNode; // Nuevo prop opcional para el componente de "includes"
 }
 
 const ModuloCard: React.FC<ModuloCardProps> = ({
@@ -28,6 +29,7 @@ const ModuloCard: React.FC<ModuloCardProps> = ({
   prerequisites,
   syllabus,
   includes,
+  includesComponent, // Nuevo prop para incluir el componente dinámico
 }) => {
   const [expandedSections, setExpandedSections] = useState<number[]>([]);
 
@@ -55,7 +57,7 @@ const ModuloCard: React.FC<ModuloCardProps> = ({
       <div className="modulo-header">
         <h2>{title}</h2>
         <p>Learn about the different components of a web application's back-end and explore the Node.js JavaScript runtime environment.</p>
-        <BotonNavegacion texto="Start" ruta="/modulo1/lectura"/>
+        <BotonNavegacion texto="Start" ruta="/modulo1/1.1-Lectura" />
       </div>
 
       <div className="modulo-details">
@@ -78,12 +80,16 @@ const ModuloCard: React.FC<ModuloCardProps> = ({
       </div>
 
       <div className="course-includes">
-        <h3>This course includes</h3>
-        <ul>
-          {includes.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
+        <h3>Politicas de curso</h3>
+        {includesComponent ? (
+          includesComponent // Renderiza el componente de "includes" si está presente
+        ) : (
+          <ul>
+            {includes.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        )}
       </div>
 
       <div className="syllabus-container">
@@ -111,7 +117,6 @@ const ModuloCard: React.FC<ModuloCardProps> = ({
                     </li>
                   ))}
                 </ul>
-                {/* Verifica que section.image tenga una URL válida */}
                 {section.image && (
                   <div className="syllabus-image-container">
                     <img src={section.image} alt={`${section.title} image`} className="syllabus-image" />
