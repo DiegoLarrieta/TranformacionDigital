@@ -1,3 +1,20 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  --secondary-gradient: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  --surface-color: #FFFFFF;
+  --background-color: #F8FAFC;
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --text-tertiary: #6B7280;
+  --accent-color: #7C3AED;
+  --success-color: #10B981;
+  --border-color: #E5E7EB;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .avatar-flotante {
   animation: flotar 3s ease-in-out infinite;
   position: absolute;
@@ -22,6 +39,7 @@
   flex-direction: column;
   gap: 20px;
   padding: 20px;
+  color:#333;
 }
 
 .seccion-contenido {
@@ -32,7 +50,7 @@
 }
 
 .ejemplo-codigo {
-  background-color: #333;
+  background-color: var(--background-color);
   color: #f1f1f1;
   padding: 10px;
   border-radius: 8px;
@@ -85,4 +103,29 @@
 
 .animar-derecha {
   animation: animarDerecha 0.8s ease-out forwards;
+}
+
+/* Estos estilos complementan las clases de Tailwind utilizadas en el componente */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.scale-102 {
+  --tw-scale-x: 1.02;
+  --tw-scale-y: 1.02;
+  transform: var(--tw-transform);
+}
+
+/* Asegúrate de que estas animaciones estén disponibles si no las tienes en tu configuración de Tailwind */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
 }

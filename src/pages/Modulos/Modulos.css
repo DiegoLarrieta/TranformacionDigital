@@ -1,31 +1,162 @@
+/* Variables para colores y transiciones */
+:root {
+  --primary-color: #4F46E5;
+  --primary-light: #818CF8;
+  --secondary-color: #1F2937;
+  --background-light: #F8FAFC;
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --transition-all: all 0.3s ease-in-out;
+}
+
+/* Contenedor principal */
 .modules-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+/* Información del curso */
 .course-info {
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin-bottom: 20px;
-  background-color: #e1edf2;
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E5E7EB;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background-color: var(--background-light);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-all);
 }
 
+.course-info:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* Títulos */
+.course-info h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.course-info h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 1.5rem 0 1rem;
+}
+
+/* Detalles del curso */
 .course-details {
   display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  color: #666;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin: 1.5rem 0;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
 }
 
 .course-details span {
-  font-size: 0.9em;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
+.course-details i {
+  color: var(--primary-color);
+}
+
+/* Lista de módulos */
 .module-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1.25rem;
+}
+
+/* Items del módulo */
+.module-item {
+  background-color: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  transition: var(--transition-all);
+}
+
+.module-item:hover {
+  border-color: var(--primary-light);
+  transform: translateX(4px);
+}
+
+/* Badges y etiquetas */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Lista de características */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.features-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.features-list li::before {
+  content: "✓";
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.module-list > * {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .modules-container {
+    padding: 1rem;
+  }
+  
+  .course-info {
+    padding: 1.5rem;
+  }
+  
+  .course-details {
+    gap: 1rem;
+  }
+  
+  .course-info h1 {
+    font-size: 1.75rem;
+  }
 }

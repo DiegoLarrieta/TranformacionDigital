@@ -1,50 +1,117 @@
-import React, { useState, useEffect } from 'react';
-import './AvatarBorrego.css'; 
+import React, { useState, useEffect, useCallback } from 'react';
+import './AvatarBorrego.css';
 import { borregoavatarimg } from '../assets';
 
-// Define los bancos de frases
 const frasesInicio = [
-  "¡Bienvenido al módulo! Estás a punto de aprender algo increíble.",
-  "¡Qué emoción verte aquí! Vamos a empezar con toda la energía.",
-  "Este es el comienzo de un gran viaje. ¡Vamos a por ello!"
+  "¡Bienvenido al módulo!",
+  "¡Qué emoción verte aquí!",
+  "¡Vamos a por ello!"
 ];
 
-// Añadir la interfaz para aceptar la prop `style`
+const frasesProgreso = [
+  "¡Vas muy bien!",
+  "¡Sigue así!",
+  "¡Casi lo logras!"
+];
+
+const frasesMotivacion = [
+  "¡Tú puedes!",
+  "¡Ánimo!",
+  "¡Excelente trabajo!"
+];
+
 interface BorregoAvatarProps {
   etapa: 'inicio' | 'progreso' | 'motivacion';
+  onClose?: () => void;
+  autoCloseDelay?: number;
 }
 
-const BorregoAvatar: React.FC<BorregoAvatarProps> = ({ etapa }) => {
+const BorregoAvatar: React.FC<BorregoAvatarProps> = ({ 
+  etapa, 
+  onClose,
+  autoCloseDelay = 5000
+}) => {
   const [frase, setFrase] = useState('');
-  const [visible, setVisible] = useState(true); // Hacer que el avatar esté visible por defecto
+  const [visible, setVisible] = useState(true);
+  const [isExiting, setIsExiting] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
-  useEffect(() => {
-    const bancoFrases = frasesInicio;
-    const nuevaFrase = bancoFrases[Math.floor(Math.random() * bancoFrases.length)];
-    setFrase(nuevaFrase);
+  const getFrasesPorEtapa = useCallback(() => {
+    switch (etapa) {
+      case 'inicio':
+        return frasesInicio;
+      case 'progreso':
+        return frasesProgreso;
+      case 'motivacion':
+        return frasesMotivacion;
+      default:
+        return frasesInicio;
+    }
   }, [etapa]);
 
-  const handleClose = () => {
-    setVisible(false); // Cerrar el avatar cuando se haga clic en la flecha
+  useEffect(() => {
+    if (isHovered) {
+      const interval = setInterval(() => {
+        const frases = getFrasesPorEtapa();
+        const nuevaFrase = frases[Math.floor(Math.random() * frases.length)];
+        setFrase(nuevaFrase);
+      }, 2000); // Reducido a 2 segundos
+
+      return () => clearInterval(interval);
+    }
+  }, [isHovered, getFrasesPorEtapa]);
+
+  useEffect(() => {
+    const frases = getFrasesPorEtapa();
+    const nuevaFrase = frases[Math.floor(Math.random() * frases.length)];
+    setFrase(nuevaFrase);
+  }, [etapa, getFrasesPorEtapa]);
+
+  useEffect(() => {
+    if (autoCloseDelay) {
+      const timer = setTimeout(() => {
+        setIsExiting(true);
+        setTimeout(() => {
+          setVisible(false);
+          if (onClose) onClose();
+        }, 300);
+      }, autoCloseDelay);
+      return () => clearTimeout(timer);
+    }
+  }, [autoCloseDelay, onClose]);
+
+  const handleAvatarHover = () => {
+    setIsHovered(true);
   };
+
+  const handleAvatarLeave = () => {
+    setIsHovered(false);
+  };
+
+  if (!visible) return null;
 
   return (
     <>
-      {visible && (
-        <>
-          {/* Overlay que cubre la pantalla */}
-          <div className="overlay" />
-
-          {/* Avatar y mensaje */}
-          <div className="avatar-container">
-            <div className="thought-bubble">
-              <p>{frase}</p>
-            </div>
-            <img src={borregoavatarimg} alt="Avatar Motivacional" className="avatar-image" />
-            <button className="close-btn" onClick={handleClose}>→</button>
-          </div>
-        </>
-      )}
+      <div className={`overlay ${isExiting ? 'avatar-exit' : ''}`} />
+      <div className={`avatar-container ${isExiting ? 'avatar-exit' : ''}`}>
+        <div className="thought-bubble">
+          <p className="typing-text">{frase}</p>
+        </div>
+        <img 
+          src={borregoavatarimg} 
+          alt="Avatar Motivacional" 
+          className="avatar-image"
+          onMouseEnter={handleAvatarHover}
+          onMouseLeave={handleAvatarLeave}
+          onClick={() => {
+            setIsExiting(true);
+            setTimeout(() => {
+              setVisible(false);
+              if (onClose) onClose();
+            }, 300);
+          }}
+        />
+      </div>
     </>
   );
 };

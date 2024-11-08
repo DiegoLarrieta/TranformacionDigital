@@ -1,90 +1,111 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './header.css';
 import Navbar from '../Navbar/Navbar';
 import {
   logotectransparente,
   logotipocva,
-  hamburgerMenuIcon,
   homeIcon,
   cursosIcon,
 } from '../../assets';
 
 const Header = () => {
   const [isNavbarVisible, setNavbarVisible] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
   const navbarRef = useRef<HTMLDivElement>(null);
-  const hamburgerRef = useRef<HTMLDivElement>(null);
-
-  const showNavbar = () => {
-    setNavbarVisible(true);
-  };
-
-  const hideNavbar = () => {
-    setNavbarVisible(false);
-  };
-
-  // Manejar el clic fuera del área del Navbar y el ícono de hamburguesa
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      navbarRef.current &&
-      !navbarRef.current.contains(event.target as Node) &&
-      hamburgerRef.current &&
-      !hamburgerRef.current.contains(event.target as Node)
-    ) {
-      hideNavbar();
-    }
-  };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+    const handleClickOutside = (event: MouseEvent) => {
+      // Verificar si el navbar está abierto
+      if (!isNavbarVisible) return;
+
+      // Obtener los elementos del DOM
+      const target = event.target as Node;
+      const header = headerRef.current;
+      const navbar = navbarRef.current;
+
+      // Si el clic no fue dentro del header ni dentro del navbar, cerrar el navbar
+      if (header && navbar && 
+          !header.contains(target) && 
+          !navbar.contains(target)) {
+        setNavbarVisible(false);
+      }
     };
-  }, []);
+
+    // Agregar event listener cuando el navbar está visible
+    if (isNavbarVisible) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    // Cleanup: remover event listener cuando el componente se desmonta
+    // o cuando el navbar se cierra
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isNavbarVisible]); // Se actualiza cuando cambia la visibilidad del navbar
+
+  const toggleNavbar = (event: React.MouseEvent) => {
+    // Evitar que el clic se propague al document
+    event.stopPropagation();
+    setNavbarVisible(!isNavbarVisible);
+  };
 
   return (
-    <header className="header">
-      {/* Logo del Tec a la izquierda */}
-      <img src={logotectransparente} className="tec-logo" alt="Logo Tec" />
-
-      {/* Íconos de Home, Menú de hamburguesa y Módulos */}
-      <div className="header-icons">
-        {/* Icono de Home, visible solo en pantallas grandes */}
-        <div className="icon-button home-icon">
-          <img src={homeIcon} alt="Home" />
+    <>
+      <header ref={headerRef} className="header">
+        {/* Logo Tec */}
+        <div className="logo-container">
+          <Link to="/">
+            <img 
+              src={logotectransparente} 
+              className="tec-logo" 
+              alt="Logo Tec"
+              loading="lazy"
+            />
+          </Link>
         </div>
 
-        {/* Menú de hamburguesa en el centro */}
-        <div
-          ref={hamburgerRef}
-          className="icon-button"
-          onMouseEnter={showNavbar}
-        >
-          <img src={hamburgerMenuIcon} alt="Menú" />
+        {/* Íconos centrales */}
+        <div className="header-icons">
+          {/* Botón hamburguesa */}
+          <div 
+            className="hamburger-button"
+            onClick={toggleNavbar}
+            role="button"
+            tabIndex={0}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isNavbarVisible}
+          >
+            <div className={`hamburger-icon ${isNavbarVisible ? 'active' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+
+          <Link to="/modulos" className="icon-button">
+            <img src={cursosIcon} alt="Módulos" />
+          </Link>
         </div>
 
-        {/* Icono de Módulos */}
-        <div
-          className="icon-button modules-icon"
-          onMouseEnter={() => setNavbarVisible(true)}
-          onMouseLeave={() => setNavbarVisible(false)}
-        >
-          <img src={cursosIcon} alt="Módulos" />
+        {/* Logo CVA */}
+        <div className="logo-container">
+          <Link to="/about">
+            <img 
+              src={logotipocva} 
+              className="cvx" 
+              alt="Logo CVA"
+              loading="lazy"
+            />
+          </Link>
         </div>
+      </header>
+
+      {/* Navbar con ref para detectar clics */}
+      <div ref={navbarRef}>
+        <Navbar className={isNavbarVisible ? 'visible' : ''} />
       </div>
-
-      {/* Logo de CVA a la derecha */}
-      <img src={logotipocva} className="cvx" alt="Logo CVA" />
-
-      {/* Navbar que aparece al hacer hover en el menú de hamburguesa o en sí mismo */}
-      <div
-        ref={navbarRef}
-        onMouseEnter={showNavbar}
-        onMouseLeave={hideNavbar}
-        className={`navbar-container ${isNavbarVisible ? 'visible' : 'hidden'}`}
-      >
-        <Navbar />
-      </div>
-    </header>
+    </>
   );
 };
 

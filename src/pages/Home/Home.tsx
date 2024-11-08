@@ -28,26 +28,11 @@ const Home = () => {
   }, [location]);
 
   return (
-    <MainContent>
-      <div className="home-container">
-        <div className="home-content">
-          <div className="info-section">
-            <h1>Curso: Programación Web Básica con HTML, CSS y JavaScript</h1>
-            <p>El mejor curso para iniciarte en la programación web. Descubre cómo HTML, CSS y JavaScript son los pilares del desarrollo de páginas web modernas.</p>
-            <h2>¿Qué aprenderás?</h2>
-            <ul>
-              <li>✅ Comprender los fundamentos de programación web.</li>
-              <li>✅ Crear páginas web con HTML, CSS y JavaScript.</li>
-              <li>✅ Publicar tu propio sitio web.</li>
-            </ul>
-            <p className="course-meta">
-              <FaStar color="#FFD700" /> 4.8 de calificación | <FaCalendarAlt color="#8B0000" /> Junio 2023 | <FaClock color="#000000" /> 6 horas | <FaSignal color="#4CAF50" /> Nivel Básico
-            </p>
-          </div>
-          
-          <div className="image-section">
-            <img src={htmlcssjavas} alt="Curso de Programación Web Básica" />
-          </div>
+    <MainContent> {/* Usamos el MainContent para manejar la estructura general */}
+      <div className="bienvenida-container">
+        {/* Imagen de fondo */}
+        <div className="hero">
+            <h1>Curso de Introduccion a la Programacion y Tecnologia</h1>
         </div>
 
         <div className="welcome-section">
@@ -56,30 +41,24 @@ const Home = () => {
             Te damos la más cordial bienvenida al "Curso en Programación Web Básica con HTML, CSS y JavaScript", en él encontrarás todos los conceptos necesarios para empezar a crear páginas web con tecnologías y herramientas de gran relevancia en la actualidad.
           </p>
           <p>
-            La programación web es un campo muy grande que puede abrir muchas puertas: ya sea que quieras hacer un sitio web para un negocio o empezar tu camino como desarrollador, es una habilidad muy valiosa hoy en día.
+            La programación web es un campo muy grande que puede abrir muchas puertas: ya sea que quieras hacer un sitio web para un negocio o empezar tu camino como desarrollador, es una habilidad muy valiosa hoy en día. Es también la herramienta perfecta para llevar tus proyectos y conocimientos al siguiente nivel.
           </p>
           <p>
             Con este curso podrás construir un sitio web desde cero, utilizando algunas de las herramientas más populares en la industria del desarrollo web.
           </p>
           <p>
-            Centro Virtual de Aprendizaje<br />Tecnológico de Monterrey
+            Empezarás conociendo HTML, el lenguaje primordial de las páginas web de hoy en día. Aprenderás sobre estructura, formato y la organización de los componentes de tu página web. Con una buena estructura en pie, podrás añadir decoración y formato con el lenguaje CSS. Después conocerás el lenguaje de programación para la interacción: JavaScript. Este te servirá para manipular elementos de tu sitio, agregar animaciones y muchas otras cosas más.
+            {/* Incluye el resto del texto aquí */}
           </p>
-          <div className="boton-container">
-            <BotonNavegacion texto="Objetivos del Curso" ruta="/home/objetivos" /> 
-          </div>
+          <p>
+            Te damos la más cordial bienvenida al "Curso de Introduccion a la Programacion y Tecnologia"
+          </p>
+          <p>Centro Virtual de Aprendizaje<br />Tecnológico de Monterrey</p>
         </div>
-
-        {/* Sección de Objetivos con el ID "objetivos-section" */}
-        <div id="objetivos-section">
-          <Objetivos />
-        </div>
-        {/* Sección de Mapa Conceptual con el ID "MapaConceptual-section" */}
-        <div id="MapaConceptual-section">
-          <MapaConceptual/>
-        </div>
-        {/* Sección de Mapa Conceptual con el ID "MapaConceptual-section" */}
-        <div id="metodologia-section">
-          <Metodologia/>
+        <img src="src\pages\Metodologia\coding-img.jpg"/>
+        {/* Botón de continuar */}
+        <div className="boton-container">
+          <BotonNavegacion texto="Continuar" ruta="/objetivos" /> 
         </div>
       </div>
     </MainContent>

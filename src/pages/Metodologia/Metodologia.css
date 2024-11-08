@@ -1,82 +1,135 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  --secondary-gradient: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  --accent-gradient: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+  --surface-color: #FFFFFF;
+  --background-color: #F8FAFC;
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --text-tertiary: #6B7280;
+  --accent-color: #7C3AED;
+  --success-color: #10B981;
+  --border-color: #E5E7EB;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estructura principal */
+.page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.gradient-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--primary-gradient);
+}
+
+/* Contenedor principal */
 .metodologia-container {
-  padding: 20px;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  pointer-events: auto;
+}
+
+.metodologia-content img{
+display:block;
+max-width: 100%;
 }
 
 .metodologia-content {
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.metodologia-text h2 {
-  color: #333;
-  margin-bottom: 15px;
+/* Estilos de contenido */
+.metodologia-content h2 {
+  color: var(--accent-color);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.metodologia-text {
+  color: var(--text-primary);
 }
 
 .metodologia-text p {
-  color: #555;
+  font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
 }
 
-.recomendaciones-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-.recomendaciones-list li {
-  position: relative;
-  color: #555;
-  font-weight: bold;
-  padding-left: 20px;
-  opacity: 0;
-  animation: fadeInGold 1s ease-in-out forwards;
-}
-
-/* Animación de color dorado */
-@keyframes fadeInGold {
-  0% { color: #555; opacity: 0; }
-  50% { color: #555; opacity: 1; }
-  100% { color: gold; opacity: 1; }
-}
-
-/* Agregar retraso secuencial para cada elemento */
-.recomendaciones-list li:nth-child(1) {
-  animation-delay: 0.5s;
-}
-
-.recomendaciones-list li:nth-child(2) {
-  animation-delay: 1s;
-}
-
-.recomendaciones-list li:nth-child(3) {
-  animation-delay: 1.5s;
-}
-
-.recomendaciones-list li:nth-child(4) {
-  animation-delay: 2s;
-}
-
+/* Botón */
 .button-container {
-  text-align: center;
-  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .adelante-button {
-  background-color: #0056b3;
+  background-color: var(--accent-color);
   color: white;
-  padding: 10px 20px;
-  font-size: 16px;
   border: none;
-  border-radius: 5px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: var(--transition-base);
 }
 
 .adelante-button:hover {
-  background-color: #003d7a;
+  background-color: #6D28D9;
+  transform: translateY(-1px);
+}
+
+/* Asegúrate de que los íconos flotantes cubran toda la pantalla */
+.floating-icons-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+html, body {
+  height: 100%;
+  overflow-y: auto;
 }

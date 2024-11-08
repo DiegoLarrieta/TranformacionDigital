@@ -56,44 +56,40 @@ const ModuloCard: React.FC<ModuloCardProps> = ({
     <div className="modulo-card">
       <div className="modulo-header">
         <h2>{title}</h2>
-        <p>Learn about the different components of a web application's back-end and explore the Node.js JavaScript runtime environment.</p>
-        <BotonNavegacion texto="Start" ruta="/modulo1/1.1-Lectura" />
+        <p>¡Explora la programación en páginas web y adéntrate en el backend!</p>
+        
+        <BotonNavegacion texto="Adelante" ruta="/modulo1/lectura"/>
       </div>
-
       <div className="modulo-details">
         <div className="modulo-detail-item">
-          <img src={levelIcon} alt="Level icon" />
+          <img src={levelIcon} alt="Level" />
           <span>{level}</span>
         </div>
         <div className="modulo-detail-item">
-          <img src={clockIcon} alt="Clock icon" />
+          <img src={clockIcon} alt="Duration" />
           <span>{time}</span>
         </div>
         <div className="modulo-detail-item">
-          <img src={testIcon} alt="Projects icon" />
-          <span>{projects} Projects</span>
+          <img src={testIcon} alt="Projects" />
+          <span>{projects} Projectos</span>
         </div>
         <div className="modulo-detail-item">
-          <img src={lectureIcon} alt="Lectures icon" />
-          <span>Lectures {prerequisites}</span>
+          <img src={lectureIcon} alt="Lectures" />
+          <span>{prerequisites} Módulos</span>
         </div>
       </div>
 
       <div className="course-includes">
-        <h3>Politicas de curso</h3>
-        {includesComponent ? (
-          includesComponent // Renderiza el componente de "includes" si está presente
-        ) : (
-          <ul>
-            {includes.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        )}
+        <h3>Este curso incluye</h3>
+        <ul>
+          {includes.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
       </div>
 
       <div className="syllabus-container">
-        <h3>Modules</h3>
+        <h3>Módulos </h3>
         {syllabus.map((section, index) => (
           <div key={index} className="syllabus-section">
             <div className="syllabus-header" onClick={() => toggleSection(index)}>

@@ -6,78 +6,35 @@ import Politicas from '../Politicas/Politicas';
 
 const Modulos = () => {
   const moduleData = {
-    title: 'Curso en Programacion Web Basica con HTML , CSS y JavaScript',
-    level: 'Intermediate',
-    time: '5 hours',
+    title: 'Curso de HTML, CSS & Javascript',
+    level: 'Intermedio',
+    time: '5 horas',
     projects: 2,
     prerequisites: '2',
+    includes: [
+      'Asistencia de inteligencia artificial',
+      'Actividades de aprendizaje',
+      'Pruebas rápidas',
+      'Un certificado al completar',
+    ],
     syllabus: [
       {
-        title: 'Preparacion del Ambiente y Conceptos Basicos',
-        description: 'Introduccion y conceptos basicos de programacion.',
+        title: 'HTML: primeros pasos',
+        description: 'A brief overview of what you will learn in the Learn Node.js course.',
         items: [
-          { type: 'Lesson', title: 'Módulo 1 - Preparación del Ambiente y Conceptos Básicos' },
-          { type: 'Lesson', title: 'Tema 1 - Conceptos Básicos'},
-          { type: 'Lesson', title: 'Tema 2 - Solicitudes de Empleo'},
-          { type: 'Lesson', title: 'Tema 3 - Otros conceptos que debes de conocer'},
-          { type: 'Lesson', title: 'Tema 4 - Preparacion del Ambiente de trabajo'},
-          { type: 'Lesson', title: 'Tema 5 - Introduccion a VS Code'},
-          { type: 'Lesson', title: 'Tema 6 - Organizacion de Archivos'},
-          { type: 'Lesson', title: 'Tema 7 - Escribiendo Codigo'},
-          { type: 'Lesson', title: 'Tema 8 - Otras recomendaciones'},
-          { type: 'Lesson', title: 'Tema 9 - Atajos'},
-          { type: 'Quiz', title: 'Quiz 1 - Ejercicio 1'},
-          { type: 'Lock', title: 'Finalizacion' },
+          { type: 'Lesson', title: 'Directivas simples en HTML' },
+          { type: 'Quiz', title: 'Repasemos lo aprendido' },
+          { type: 'Lock', title: '¡Es hora de la prueba!' },
         ],
         image: htmlcss, // Imagen específica para este módulo
       },
       {
-        title: 'Formato y Estructura de HTML',
-        description: 'Introduccion a la programacion en Frontend con HTML.',
+        title: '¿Pero qué es Back-End?',
+        description: 'Explora los bloques de la arquitectura back-end',
         items: [
-          { type: 'Lesson', title: 'What is the Back-end?' },
-          { type: 'Article', title: 'JavaScript for Node.js' },
-          { type: 'Article', title: 'What Is JSON?' },
-        ],
-        image: javascript, // Otra imagen para este módulo
-      },
-      {
-        title: 'Formato y Estructura de HTML',
-        description: 'Introduccion a la programacion en Frontend con HTML.',
-        items: [
-          { type: 'Lesson', title: 'What is the Back-end?' },
-          { type: 'Article', title: 'JavaScript for Node.js' },
-          { type: 'Article', title: 'What Is JSON?' },
-        ],
-        image: javascript, // Otra imagen para este módulo
-      },
-      {
-        title: 'Decorando con CSS',
-        description: 'Introduccion a diseño web con CSS.',
-        items: [
-          { type: 'Lesson', title: 'What is the Back-end?' },
-          { type: 'Article', title: 'JavaScript for Node.js' },
-          { type: 'Article', title: 'What Is JSON?' },
-        ],
-        image: javascript, // Otra imagen para este módulo
-      },
-      {
-        title: 'Un poco de JavaScript',
-        description: 'Introduccion a la programacion logica con JavaScript',
-        items: [
-          { type: 'Lesson', title: 'What is the Back-end?' },
-          { type: 'Article', title: 'JavaScript for Node.js' },
-          { type: 'Article', title: 'What Is JSON?' },
-        ],
-        image: javascript, // Otra imagen para este módulo
-      },
-      {
-        title: 'Publicar a la Web',
-        description: 'Como hacer publico tu trabajo en la web',
-        items: [
-          { type: 'Lesson', title: 'What is the Back-end?' },
-          { type: 'Article', title: 'JavaScript for Node.js' },
-          { type: 'Article', title: 'What Is JSON?' },
+          { type: 'Lesson', title: '¿Qué es Back-end?' },
+          { type: 'Article', title: 'JavaScript para Node.js' },
+          { type: 'Article', title: '¿Qué es JSON?' },
         ],
         image: javascript, // Otra imagen para este módulo
       },

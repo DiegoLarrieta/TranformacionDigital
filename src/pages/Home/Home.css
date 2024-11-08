@@ -1,125 +1,75 @@
-.home-container {
+:root {
+  --primary-gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  --secondary-gradient: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  --accent-gradient: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+  --surface-color: #FFFFFF;
+  --background-color: #F8FAFC;
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --text-tertiary: #6B7280;
+  --accent-color: #7C3AED;
+  --success-color: #10B981;
+  --border-color: #E5E7EB;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bienvenida-container {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   padding: 20px;
-  color: #333;
+  min-height: calc(100vh - 80px - 50px); /* Altura del header y footer */
+  box-sizing: border-box;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-lg);
+  width: 90%;
+  background-color: var(--surface-color);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  justify-self: center;
+
 }
 
-.home-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: center;
+.bienvenida-container img{
+  display:block;
+  max-width: 100%;
+  }
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--accent-color);
 }
 
-.info-section {
-  flex: 1;
-  max-width: 600px;
-}
-
-.info-section h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.info-section p {
-  margin: 10px 0;
-}
-
-.info-section h2 {
+.texto-informativo {
   margin-top: 20px;
 }
 
-.info-section ul {
-  list-style: none;
-  padding: 0;
+.texto-informativo h2 {
+  color: #2563EB; /* Un color similar al mostrado en la imagen */
+  font-size: 24px;
 }
 
-.info-section ul li {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-}
-
-.course-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  font-style: italic;
-  color: #666;
-  margin-top: 20px;
-}
-
-.course-item {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  white-space: nowrap; /* Evita que el texto se divida en medio de un elemento */
-}
-
-.image-section {
-  flex: 1;
-  max-width: 450px;
-  margin-left: auto; /* Alinea la imagen a la derecha */
-  display: flex;
-  justify-content: center;
-  justify-content: flex-end;
-}
-
-.image-section img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.welcome-section {
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-}
-
-.welcome-section h2 {
-  margin-bottom: 10px;
+.texto-informativo p {
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
 .boton-container {
-  margin-top: 20px;
+  margin-top: 30px;
+  text-align: center;
 }
 
-#objetivos-section {
-  margin-top: 40px; /* Espacio adicional antes de la sección de objetivos */
+.btn-continuar {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-#MapaConceptual-section{
-  margin-top: 40px; /* Espacio adicional antes de la sección de objetivos */
-}
-#metodologia-section{
-  margin-top: 40px;
-}
-
-/* Responsive para pantallas pequeñas */
-@media (max-width: 768px) {
-  .home-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .info-section, .image-section {
-    max-width: 100%;
-    text-align: center;
-  }
-  .image-section {
-    margin-left: 0;
-    justify-content: center;
-  }
-  .course-meta {
-    justify-content: center;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .course-item {
-    flex: 1 1 100%; /* Cada elemento ocupará toda la línea en pantallas pequeñas */
-    justify-content: center;
-  }
+.btn-continuar:hover {
+  background-color: #0056b3;
 }
