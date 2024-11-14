@@ -1,11 +1,12 @@
 :root {
   --primary-gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
   --secondary-gradient: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  --tec-Color: #0056b3;
   --surface-color: #FFFFFF;
   --background-color: #F8FAFC;
   --text-primary: #1F2937;
-  --text-secondary: #4B5563;
-  --text-tertiary: #6B7280;
+  --text-secondary: #344051;
+  --text-tertiary: #4b5260;
   --accent-color: #7C3AED;
   --success-color: #10B981;
   --border-color: #E5E7EB;
@@ -32,6 +33,15 @@
   font-size: 2.5rem;
   color: #4a90e2;
   margin-bottom: 20px;
+}
+
+.ejemplo-codigo {
+  background-color: #333;
+  color: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
 }
 
 .contenido-lectura {
