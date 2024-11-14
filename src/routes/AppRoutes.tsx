@@ -10,6 +10,14 @@ import Modulos from '../pages/Modulos/Modulos';
 import Politicas from '../pages/Politicas/Politicas';
 import Contactanos from '../pages/Contactanos/Contactanos';
 
+// donde exportamos las rutas para hacer el calculo  
+export const routes = [
+  { path : "/modulo1/1.1-Lectura", element : <Modulo11 /> },
+  { path : "/modulo1/1.2-Lectura", element : <Modulo12 /> },
+  { path : "/modulo1/1.3-Lectura", element : <Modulo13 /> },
+  { path : "/modulo1/1.4-Lectura", element : <Modulo14 /> },
+];
+
 // Importa las páginas específicas del Módulo 1
 import Modulo11 from '../pages/Modulos/Modulo1/Modulo11';
 import Modulo12 from '../pages/Modulos/Modulo1/Modulo12';
