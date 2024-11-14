@@ -58,7 +58,7 @@ const Objetivos = () => {
       <p>Esperamos que estés ansioso por comenzar a aprender.</p>
 
       <div className="boton-container">
-        <BotonNavegacion texto="Adelante" ruta="/mapa" />
+        <BotonNavegacion texto="Adelante" ruta="/mapa" nombre="boton-aprendizaje"/>
       </div>
     </div>
   );

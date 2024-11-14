@@ -1,6 +1,6 @@
 .home-container {
   padding: 20px;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .home-content {
@@ -8,6 +8,8 @@
   flex-wrap: wrap;
   gap: 20px;
   align-items: center;
+  background-color: var(--background-color);
+  padding: 20px;
 }
 
 .info-section {
@@ -73,7 +75,7 @@
 .welcome-section {
   margin-top: 40px;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--background-color);
   border-radius: 8px;
 }
 
@@ -86,14 +88,14 @@
 }
 
 #objetivos-section {
-  margin-top: 40px; /* Espacio adicional antes de la sección de objetivos */
+  margin-top: 20px; /* Espacio adicional antes de la sección de objetivos */
 }
 
 #MapaConceptual-section{
-  margin-top: 40px; /* Espacio adicional antes de la sección de objetivos */
+  margin-top: 20px; /* Espacio adicional antes de la sección de objetivos */
 }
 #metodologia-section{
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 /* Responsive para pantallas pequeñas */
@@ -122,4 +124,9 @@
     flex: 1 1 100%; /* Cada elemento ocupará toda la línea en pantallas pequeñas */
     justify-content: center;
   }
+}
+
+.btn-navegacion{
+  display:flex;
+  margin: auto; /*Centra el botón*/
 }

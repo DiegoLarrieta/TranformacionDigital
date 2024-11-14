@@ -2,7 +2,7 @@
 import React from 'react';
 import './MapaConceptual.css';
 import { htmlcssjavasmapacon } from '../../assets';
-
+import BotonNavegacion from '../../components/Button/BotonNavegacion';
 const MapaConceptual = () => {
   return (
     <div className="mapa-conceptual-card"> {/* Agregamos la clase para estilo de tarjeta */}
@@ -18,10 +18,7 @@ const MapaConceptual = () => {
           alt="Mapa conceptual del curso"
         />
       </div>
-
-      <div className="button-container">
-        <button className="adelante-button">ADELANTE</button>
-      </div>
+      <BotonNavegacion texto="Ver mapa" ruta="/Mapa" nombre="btn-navegacion-mapa-conceptual"/>
     </div>
   );
 };

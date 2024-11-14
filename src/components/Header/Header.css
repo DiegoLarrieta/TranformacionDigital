@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: #0056b3;
+  color: white; 
   width: 100%;
   height: auto;
   position: fixed;
@@ -11,32 +12,13 @@
   padding: 15px ; /* Ajuste en el padding para espacio superior e inferior */
 }
 
-/* Navbar container styles */
-.navbar-container {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  z-index: 900;
-  transition: opacity 0.3s ease;
-}
-
-.navbar-container.hidden {
-  opacity: 0;
-  pointer-events: none; /* Evita que se puedan hacer clics en el navbar cuando está oculto */
-}
-
-.navbar-container.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 .cvx {
   height: 40px;
   width: auto;
   object-fit: contain;
   margin: 0 40px; /* Espacio alrededor de los logos */
 }
+
 .tec-logo{
   height: 40px;
   width: auto;
@@ -59,10 +41,6 @@
   cursor: pointer;
   transition: color 0.3s;
   padding: 10px; /* Espacio adicional alrededor del ícono */
-}
-
-.icon-button:hover {
-  color: #7b61ff; /* Cambia el color a morado al hacer hover */
 }
 
 /* Alineación específica para pantalla grande */
@@ -167,27 +145,11 @@
 /* Estilos para la etiqueta de "Módulos" */
 .module-label {
   font-size: 12px;
-  color: #fff;
   position: absolute;
   top: 55px; /* Ajusta para ubicar el texto debajo del ícono sin cambiar el layout */
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
   text-align: center;
-}
-/* Animación para el despliegue de Navbar */
-.visible {
-  animation: slideDown 0.3s ease forwards;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 

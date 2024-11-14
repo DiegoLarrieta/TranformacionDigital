@@ -8,6 +8,7 @@ import Objetivos from '../Objetivos/Objetivos'; // Importamos el componente Obje
 import MapaConceptual  from '../MapaConceptual/MapaConceptual';
 import Metodologia from '../Metodologia/Metodologia';
 import { htmlcssjavas } from '../../assets';
+import LearningOutcomes from '../../components/Aprendizaje';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -65,7 +66,7 @@ const Home = () => {
             Centro Virtual de Aprendizaje<br />Tecnológico de Monterrey
           </p>
           <div className="boton-container">
-            <BotonNavegacion texto="Objetivos del Curso" ruta="/home/objetivos" /> 
+            <BotonNavegacion texto="Objetivos del Curso" ruta="/home/objetivos" nombre="boton-principal"/> 
           </div>
         </div>
 

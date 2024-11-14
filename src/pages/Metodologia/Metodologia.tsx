@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Metodologia.css';
+import BotonNavegacion from '../../components/Button/BotonNavegacion';
 
 const Metodologia = () => {
   const [dayCount, setDayCount] = useState(0);
@@ -50,10 +51,7 @@ const Metodologia = () => {
             <li>Contar con buena conexión a Internet para revisar los contenidos y materiales del curso sin interrupciones tecnológicas.</li>
             <li>Asumir un rol muy activo, ya que la forma de trabajo está centrada en tu desempeño.</li>
           </ul>
-
-          <div className="button-container">
-            <button className="adelante-button">ADELANTE</button>
-          </div>
+          <BotonNavegacion texto="Adelante" ruta="/Modulos" nombre="btn-navegacion-modulos"/>
         </div>
       </div>
     </div>
