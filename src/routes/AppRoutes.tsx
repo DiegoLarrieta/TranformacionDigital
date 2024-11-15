@@ -1,7 +1,6 @@
 // AppRoutes.tsx (o como se llame el archivo)
-import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import MainContent from '../components/Main/MainContent';
+
 import Home from '../pages/Home/Home';
 import Objetivos from '../pages/Objetivos/Objetivos';
 import MapaConceptual from '../pages/MapaConceptual/MapaConceptual';

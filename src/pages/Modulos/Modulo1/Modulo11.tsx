@@ -1,4 +1,3 @@
-import React from 'react';
 import BotonNavegacion from '../../../components/Button/BotonNavegacion';
 import BorregoAvatar from '../../../components/AvatarBorrego';
 import MainContent from '../../../components/Main/MainContent';

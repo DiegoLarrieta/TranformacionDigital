@@ -1,8 +1,7 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import Header from './components/Header/Header'; // Asegúrate de ajustar la ruta de importación
 import Footer from './components/Footer/Footer';
-import Navbar from './components/Navbar/Navbar';
 import MainContent from './components/Main/MainContent';
 import AppRoutes, { routes } from './routes/AppRoutes'; // Importa las rutas exportadas
 import ProgressBar from './components/ProgressBar/ProgressBar';

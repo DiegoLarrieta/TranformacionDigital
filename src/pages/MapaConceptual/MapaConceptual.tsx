@@ -1,5 +1,5 @@
 // MapaConceptual.tsx
-import React from 'react';
+
 import './MapaConceptual.css';
 import { htmlcssjavasmapacon } from '../../assets';
 import BotonNavegacion from '../../components/Button/BotonNavegacion';

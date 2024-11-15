@@ -1,5 +1,5 @@
 // Objetivos.tsx
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import './Objetivos.css'; // Asegúrate de incluir los estilos actualizados
 import BotonNavegacion from '../../components/Button/BotonNavegacion';
 
