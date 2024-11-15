@@ -1,67 +1,124 @@
-/* Overlay que cubre toda la pantalla y oscurece el fondo */
+/* Overlay con animación de fade */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7); /* Filtro oscuro */
-  z-index: 999; /* Debe estar debajo del avatar */
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in forwards;
 }
 
-/* El contenedor del avatar */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Contenedor del avatar con animación de entrada */
 .avatar-container {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.8);
   display: flex;
   align-items: center;
   flex-direction: column;
   z-index: 1000;
+  animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
-/* Imagen del avatar */
+@keyframes popIn {
+  from { 
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  to { 
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Imagen del avatar con efectos hover */
 .avatar-image {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-/* Burbuja de pensamiento */
+.avatar-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Burbuja de pensamiento con animación */
 .thought-bubble {
   background-color: black;
   color: white;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px 20px;
   position: relative;
   margin-bottom: 20px;
   text-align: center;
+  max-width: 300px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: bubbleIn 0.5s ease forwards 0.3s;
+}
+
+@keyframes bubbleIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .thought-bubble::after {
   content: '';
   position: absolute;
-  bottom: 100%;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  border-width: 5px;
+  border-width: 10px;
   border-style: solid;
-  border-color: transparent transparent black transparent;
+  border-color: black transparent transparent transparent;
 }
 
-/* Botón de cierre con flecha */
-.close-btn {
-  background-color: #fff;
-  border: none;
-  font-size: 24px;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
+/* Animación de salida */
+.avatar-exit {
+  animation: fadeOut 0.3s ease forwards;
 }
 
-.close-btn:hover {
-  transform: scale(1.1);
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Efecto de typing para el texto */
+.typing-text {
+  overflow: hidden;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 1.5s steps(40, end),
+             blink-caret 0.75s step-end infinite;
+  max-width: 280px; /* Ajusta este valor según necesites */
+  text-overflow: ellipsis;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white }
 }

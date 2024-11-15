@@ -1,72 +1,132 @@
 /* Estilos para el navbar */
 .navbar {
   display: flex;
-  flex-direction: row;
+  position: fixed; /* Asegura que esté debajo del header */
   background-color: #2c2f33;
-  position: absolute; /* Asegura que esté debajo del header */
   top: 0; /* Ya ajustado a la altura correcta */
   left: 0;
   width: 100%;
-  padding: 15px 0;
   z-index: 900;
-  justify-content: space-between; /* Distribuir uniformemente en el eje horizontal */
+  transition: all 0.3s ease;
+  justify-content: center; /* Distribuir uniformemente en el eje horizontal */
+  
 }
+
+.navbar a{
+  color: white;
+  padding: 4px;
+
+}
+
+.navbar-list.hidden {
+  opacity: 0;
+  pointer-events: none; /* Evita que se puedan hacer clics en el navbar cuando está oculto */
+
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-list.visible {
+  opacity: 1;
+  pointer-events: auto;
+  animation: slideDown 0.3s ease forwards;
+}
+
 
 .navbar-list {
   display: flex;
-  gap: 20px;
-  width: 100%; /* Asegura que ocupe todo el ancho del navbar */
   list-style: none;
-  padding: 10px 20px;
   margin: 0;
+  gap:1rem;
+  padding: 0 0.75rem;
   justify-content: space-evenly; /* Distribuir uniformemente en pantallas grandes */
   flex-wrap: wrap; /* Permite que los elementos se ajusten */
 }
 
+
 /* Elementos individuales del navbar */
 .navbar-item {
   display: flex;
-  align-items: center;
   color: white;
   font-weight: bold;
   transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para el hover */
+  padding: 0; /* Más padding horizontal */
+  margin:20px;
+  border-radius: 4px; /* Bordes redondeados */
+  justify-content:center;
+  align-content:center;
 }
 
-.navbar-item:hover,
-.navbar-item:focus {
-  color: #7b61ff; /* Cambia el color al hacer hover */
-  transform: scale(1.1); /* Aumenta ligeramente el tamaño al hacer hover */
+.navbar-item.active {
+  display:flex;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #535bf2;
 }
 
 .navbar-icon {
   width: 30px;
   height: 30px;
-  margin-right: 8px;
+  margin-right:8px;
+  align-self:center;
 }
 
-.navbar-text {
-  color: white;
+
+.navbar.visible .navbar-list {
+  flex-direction: row;
+  justify-content: center;
+  margin: 0; 
 }
+
+.navbar-item:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 10px;
+  .navbar{
+    justify-content:center;
+    width:100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2c2f33;
   }
 
   .navbar-list {
     flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
-    align-items: flex-start; /* Alinea los elementos al inicio */
-    gap: 15px;
-    padding: 0;
+    align-items: center; /* Alinea los elementos al inicio */
+    justify-content: space-between; /* Distribuir uniformemente en el eje horizontal */
   }
 
   .navbar-item {
     width: 100%; /* Cada elemento ocupa el ancho completo en pantallas pequeñas */
-    justify-content: flex-start;
+    justify-content:center;
+    align-content:center;
+    margin:5px;
   }
 
-  .navbar-icon {
-    margin-right: 10px;
-  }
+}
+
+.navbar-item {
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  gap: 10px; /* Espacio entre el icono y el texto */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animación suave */
+}
+
+/* Estilo activo para la opción seleccionada */
+.navbar-item.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
 }

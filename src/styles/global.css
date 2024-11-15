@@ -1,3 +1,23 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, var(--tec-color) 0%, var(--tec-color-secondary) 100%);
+  --secondary-gradient: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  --card-gradient: linear-gradient(0, var(--background-color) 0%, var(--surface-color) 50%, var(--background-color));
+  --tec-color: #0056b3;
+  --tec-color-secondary: #4a90e2;
+  --surface-color: #FFFFFF;
+  --background-color: #F8FAFC;
+  --text-primary: #1F2937;
+  --text-secondary: #344051;
+  --text-tertiary: #4b5260;
+  --accent-color: #7C3AED;
+  --success-color: #10B981;
+  --border-color: #E5E7EB;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Ajustamos la estructura general */
 .app {
   display: flex;

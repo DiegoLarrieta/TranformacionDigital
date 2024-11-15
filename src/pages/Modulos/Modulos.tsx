@@ -6,7 +6,7 @@ import Politicas from '../Politicas/Politicas';
 
 const Modulos = () => {
   const moduleData = {
-    title: 'Curso en Programacion Web Basica con HTML , CSS y JavaScript',
+    title: 'Contenido del curso',
     level: 'Intermediate',
     time: '5 hours',
     projects: 2,

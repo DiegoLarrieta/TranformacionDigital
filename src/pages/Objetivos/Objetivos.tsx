@@ -7,10 +7,7 @@ const habilidades = [
   "Estructurar páginas web utilizando elementos HTML",
   "Estilizar los elementos de tus páginas con CSS",
   "Comprender conceptos básicos de programación en JavaScript",
-  "Programar en JavaScript usando scripts y funciones",
-  "Publicar proyectos web en Internet",
-  "Aplicar estándares y buenas prácticas en el desarrollo web",
-  "Manejar herramientas para el desarrollo web, incluyendo editores de código y herramientas del navegador",
+  "Programar en JavaScript usando scripts y funciones"
 ];
 
 const Objetivos = () => {
@@ -53,9 +50,6 @@ const Objetivos = () => {
           </li>
         ))}
       </ul>
-
-      <p>Todo lo anterior te permitirá desarrollar competencias para tu crecimiento profesional y personal.</p>
-      <p>Esperamos que estés ansioso por comenzar a aprender.</p>
 
       <div className="boton-container">
         <BotonNavegacion texto="Adelante" ruta="/mapa" />

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Metodologia.css';
+import BotonNavegacion from '../../components/Button/BotonNavegacion';
 
 const Metodologia = () => {
   const [dayCount, setDayCount] = useState(0);
@@ -52,7 +53,7 @@ const Metodologia = () => {
           </ul>
 
           <div className="button-container">
-            <button className="adelante-button">ADELANTE</button>
+            <BotonNavegacion texto = "Adelante" ruta = "/modulos"/>
           </div>
         </div>
       </div>

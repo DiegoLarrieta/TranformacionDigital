@@ -9,7 +9,7 @@
   width: 100%; /* El ancho completo del footer */
   height: auto;
   font-weight: bold;
-  position: static; /* Asegúrate de que no esté en relative o fixed */
+  position: absolute; /* Asegúrate de que no esté en relative o fixed */
   box-sizing: border-box;
 }
 

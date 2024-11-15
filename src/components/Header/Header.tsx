@@ -5,7 +5,6 @@ import {
   logotectransparente,
   logotipocva,
   hamburgerMenuIcon,
-  homeIcon,
   cursosIcon,
 } from '../../assets';
 
@@ -46,29 +45,15 @@ const Header = () => {
       {/* Logo del Tec a la izquierda */}
       <img src={logotectransparente} className="tec-logo" alt="Logo Tec" />
 
-      {/* Íconos de Home, Menú de hamburguesa y Módulos */}
+      {/* Íconos de Menú de hamburguesa y Módulos */}
       <div className="header-icons">
-        {/* Icono de Home, visible solo en pantallas grandes */}
-        <div className="icon-button home-icon">
-          <img src={homeIcon} alt="Home" />
-        </div>
-
         {/* Menú de hamburguesa en el centro */}
         <div
           ref={hamburgerRef}
-          className="icon-button"
+          className="hamburger-icon"
           onMouseEnter={showNavbar}
         >
           <img src={hamburgerMenuIcon} alt="Menú" />
-        </div>
-
-        {/* Icono de Módulos */}
-        <div
-          className="icon-button modules-icon"
-          onMouseEnter={() => setNavbarVisible(true)}
-          onMouseLeave={() => setNavbarVisible(false)}
-        >
-          <img src={cursosIcon} alt="Módulos" />
         </div>
       </div>
 
@@ -82,7 +67,7 @@ const Header = () => {
         onMouseLeave={hideNavbar}
         className={`navbar-container ${isNavbarVisible ? 'visible' : 'hidden'}`}
       >
-        <Navbar />
+        <Navbar/>
       </div>
     </header>
   );

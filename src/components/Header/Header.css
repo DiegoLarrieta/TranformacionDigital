@@ -26,6 +26,10 @@
   pointer-events: none; /* Evita que se puedan hacer clics en el navbar cuando está oculto */
 }
 
+.hamburger-icon{
+  align-self:center;
+}
+
 .navbar-container.visible {
   opacity: 1;
   pointer-events: auto;

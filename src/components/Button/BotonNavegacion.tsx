@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import './BotonNavegacion.css'; // Archivo CSS para estilos del botón
 
 interface BotonNavegacionProps {
+  nombre?: string;
   texto: string; // Texto del botón
   ruta?: string; // Ruta a la que debe navegar (opcional)
   onClick?: () => void; // Función personalizada que se ejecutará al hacer clic (opcional)
 }
 
-const BotonNavegacion: React.FC<BotonNavegacionProps> = ({ texto, ruta, onClick }) => {
+const BotonNavegacion: React.FC<BotonNavegacionProps> = ({ texto, ruta, nombre, onClick}) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -22,7 +23,7 @@ const BotonNavegacion: React.FC<BotonNavegacionProps> = ({ texto, ruta, onClick 
   };
 
   return (
-    <button className="btn-navegacion" onClick={handleClick}>
+    <button className={`btn-navegacion ${nombre || ''}`} onClick={handleClick}>
       {texto}
     </button>
   );

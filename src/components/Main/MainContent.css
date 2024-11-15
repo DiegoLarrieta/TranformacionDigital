@@ -1,7 +1,8 @@
 .main-content {
   flex-grow: 1;
   padding-bottom: 50px; /* Aseguramos que haya espacio antes del footer */
-  min-height: calc(100vh - 130px); /* Resta la altura del header y del footer */
+  min-height: calc(100vh - 80px); /* Resta la altura del header y del footer */
   padding-bottom: 50px; /* Asegúrate de que haya espacio para el footer */
-  padding-top: 80px;
+  padding-top: 60px;
+  
 }

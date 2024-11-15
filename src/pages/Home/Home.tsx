@@ -65,7 +65,7 @@ const Home = () => {
             Centro Virtual de Aprendizaje<br />Tecnológico de Monterrey
           </p>
           <div className="boton-container">
-            <BotonNavegacion texto="Objetivos del Curso" ruta="/home/objetivos" /> 
+            <BotonNavegacion texto="Objetivos del Curso" ruta="/objetivos" /> 
           </div>
         </div>
 
