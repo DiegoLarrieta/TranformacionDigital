@@ -1,5 +1,5 @@
 import  { useState, useRef, useEffect } from 'react';
-import './header.css';
+import './Header.css';
 import Navbar from '../Navbar/Navbar';
 import {
   logotectransparente,
