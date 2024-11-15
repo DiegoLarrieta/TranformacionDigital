@@ -7,9 +7,10 @@ interface BotonNavegacionProps {
   texto: string; // Texto del botón
   ruta?: string; // Ruta a la que debe navegar (opcional)
   onClick?: () => void; // Función personalizada que se ejecutará al hacer clic (opcional)
+  _disabled?: boolean;
 }
 
-const BotonNavegacion: React.FC<BotonNavegacionProps> = ({ texto, ruta, nombre, onClick}) => {
+const BotonNavegacion: React.FC<BotonNavegacionProps> = ({ texto, ruta, nombre, onClick, _disabled}) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -23,7 +24,7 @@ const BotonNavegacion: React.FC<BotonNavegacionProps> = ({ texto, ruta, nombre, 
   };
 
   return (
-    <button className={`btn-navegacion ${nombre || ''}`} onClick={handleClick}>
+    <button className={`btn-navegacion ${nombre || ''}`} onClick={handleClick} disabled = {_disabled}>
       {texto}
     </button>
   );

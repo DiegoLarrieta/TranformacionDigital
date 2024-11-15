@@ -1,11 +1,12 @@
 .objetivos-card {
+  display:flex;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px 30px;
   margin-top: 20px;
-  max-width: 800px;
   margin: 20px auto;
+  align-items:center;
 }
 
 .objetivos-card h2 {
@@ -33,7 +34,6 @@
   margin: 40px auto;
   font-size:1.25rem;
 
-
 }
 
 .objetivos-card h2 {
@@ -52,6 +52,7 @@
   padding: 0;
   margin: 15px 0;
   color: black;
+  width:50vw;
 }
 
 .objetivo-item {

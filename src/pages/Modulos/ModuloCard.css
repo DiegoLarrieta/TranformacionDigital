@@ -12,10 +12,12 @@
 }
 
 .modulo-header {
-  display:inline-flex;
-  text-align: left;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   color: var(--text-primary);
-  
+  flex-direction:column;
+
   margin-bottom: 2.5rem;
 }
 

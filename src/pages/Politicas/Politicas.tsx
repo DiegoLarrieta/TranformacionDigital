@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Politicas.css';
+import BotonNavegacion from '../../components/Button/BotonNavegacion';
 
 const Politicas: React.FC = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -41,9 +42,7 @@ const Politicas: React.FC = () => {
       </div>
 
       {/* Botón de confirmación */}
-      <button className="confirm-button" disabled={!isChecked}>
-        Confirmar
-      </button>
+      <BotonNavegacion texto = "Confirmar" _disabled={!isChecked}/>
     </div>
   );
 };

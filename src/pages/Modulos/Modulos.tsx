@@ -7,8 +7,8 @@ import Politicas from '../Politicas/Politicas';
 const Modulos = () => {
   const moduleData = {
     title: 'Contenido del curso',
-    level: 'Intermediate',
-    time: '5 hours',
+    level: 'Intermedio',
+    time: '5 horas',
     projects: 2,
     prerequisites: '2',
     syllabus: [

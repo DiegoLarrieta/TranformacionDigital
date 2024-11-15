@@ -34,7 +34,6 @@
 .content-section {
   display: flex;
   align-items: flex-start;
-  margin-top: 80px;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 8px;
@@ -86,4 +85,8 @@
     flex-wrap: wrap;
     gap: 10px;
   }
+}
+
+.btn-navegacion{
+  margin-top: 20px;
 }
