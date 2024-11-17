@@ -46,10 +46,10 @@ const Metodologia = () => {
           <p>A continuación, algunas recomendaciones relevantes para tu proceso de aprendizaje:</p>
 
           <ul className="recomendaciones-list">
-            <li>Disponer de un lugar propicio de trabajo que te permita concentrarte, donde exista poco ruido y haya buena iluminación.</li>
-            <li>Establecer tu propio horario de estudio, de tal forma que no afecte tu vida académica, laboral y familiar.</li>
-            <li>Contar con buena conexión a Internet para revisar los contenidos y materiales del curso sin interrupciones tecnológicas.</li>
-            <li>Asumir un rol muy activo, ya que la forma de trabajo está centrada en tu desempeño.</li>
+            <li><strong>Disponer</strong> de un lugar propicio de trabajo que te permita concentrarte, donde exista poco ruido y haya buena iluminación.</li>
+            <li><strong>Establecer</strong> tu propio horario de estudio, de tal forma que no afecte tu vida académica, laboral y familiar.</li>
+            <li><strong>Contar</strong> con buena conexión a Internet para revisar los contenidos y materiales del curso sin interrupciones tecnológicas.</li>
+            <li><strong>Asumir</strong> un rol muy activo, ya que la forma de trabajo está centrada en tu desempeño.</li>
           </ul>
 
           <div className="button-container">

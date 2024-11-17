@@ -10,6 +10,7 @@
   height: auto;
   font-weight: bold;
   position: absolute; /* Asegúrate de que no esté en relative o fixed */
+  bottom:0;
   box-sizing: border-box;
 }
 

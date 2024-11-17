@@ -5,6 +5,7 @@
   background-color: #0056b3;
   width: 100%;
   height: auto;
+  box-sizing: border-box;
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -39,7 +40,7 @@
   height: 40px;
   width: auto;
   object-fit: contain;
-  margin: 0 40px; /* Espacio alrededor de los logos */
+  margin: 0 20px; /* Espacio alrededor de los logos */
 }
 .tec-logo{
   height: 40px;
@@ -52,9 +53,8 @@
   height: 40px;
   display: flex;
   align-items: center;
-  gap: 20px; /* Espacio entre íconos */
-  margin-right: 20px; /* Añade un margen derecho para separarlo del borde */
 }
+
 
 .icon-button {
   display: flex;
@@ -62,7 +62,6 @@
   justify-content: center;
   cursor: pointer;
   transition: color 0.3s;
-  padding: 10px; /* Espacio adicional alrededor del ícono */
 }
 
 .icon-button:hover {

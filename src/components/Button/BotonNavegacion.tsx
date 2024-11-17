@@ -17,8 +17,10 @@ const BotonNavegacion: React.FC<BotonNavegacionProps> = ({ texto, ruta, nombre, 
     if (onClick) {
       // Si se pasa una función onClick, la ejecuta
       onClick();
+      
     } else if (ruta) {
       // Si se pasa una ruta, navega a la ruta proporcionada
+      
       navigate(ruta);
     }
   };

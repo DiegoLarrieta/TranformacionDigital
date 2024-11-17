@@ -60,25 +60,6 @@ const ModuloCard: React.FC<ModuloCardProps> = ({
         <BotonNavegacion texto="Comenzar" ruta="/modulo1/1.1-Lectura" />
       </div>
 
-      <div className="modulo-details">
-        <div className="modulo-detail-item">
-          <img src={levelIcon} alt="Level icon" />
-          <span>{level}</span>
-        </div>
-        <div className="modulo-detail-item">
-          <img src={clockIcon} alt="Clock icon" />
-          <span>{time}</span>
-        </div>
-        <div className="modulo-detail-item">
-          <img src={testIcon} alt="Projects icon" />
-          <span>{projects} Projects</span>
-        </div>
-        <div className="modulo-detail-item">
-          <img src={lectureIcon} alt="Lectures icon" />
-          <span>Lectures {prerequisites}</span>
-        </div>
-      </div>
-
       <div className="course-includes">
         <h3>Politicas de curso</h3>
         {includesComponent ? (
