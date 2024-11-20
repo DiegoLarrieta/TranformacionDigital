@@ -1,4 +1,6 @@
 .politicas-container {
+  display:flex;
+  flex-direction: column;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -56,4 +58,9 @@
 
 .confirm-button:hover:not(:disabled) {
   background-color: #003d7a;
+}
+
+.btn-navegacion{
+  display:flex;
+  align-self:center;
 }

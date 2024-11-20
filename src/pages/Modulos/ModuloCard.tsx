@@ -74,7 +74,7 @@ const ModuloCard: React.FC<ModuloCardProps> = ({
       </div>
 
       <div className="syllabus-container">
-        <h3>Modules</h3>
+        <h3>Módulos</h3>
         {syllabus.map((section, index) => (
           <div key={index} className="syllabus-section">
             <div className="syllabus-header" onClick={() => toggleSection(index)}>

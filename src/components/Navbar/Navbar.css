@@ -15,6 +15,8 @@
 .navbar a{
   color: white;
   padding: 4px;
+  transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para el hover */
+  font-size:clamp(0.8rem, 1rem, 1.7rem);
 
 }
 
@@ -59,7 +61,7 @@
   display: flex;
   color: white;
   font-weight: bold;
-  transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para el hover */
+  align-items:center;
   padding: 0; /* Más padding horizontal */
   margin:20px;
   border-radius: 4px; /* Bordes redondeados */
@@ -67,7 +69,7 @@
   align-content:center;
 }
 
-.navbar-item.active {
+.navbar-item.active a{
   display:flex;
   background-color: rgba(255, 255, 255, 0.15);
   color: #535bf2;
@@ -103,16 +105,20 @@
   }
 
   .navbar-list {
+    display:flex;
     flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
-    align-items: center; /* Alinea los elementos al inicio */
+    align-items: center; /* Alinea los elementos al centro */
     justify-content: space-between; /* Distribuir uniformemente en el eje horizontal */
+    overflow:hidden;
+    margin:auto;
   }
 
   .navbar-item {
+    display:flex;
     width: 100%; /* Cada elemento ocupa el ancho completo en pantallas pequeñas */
-    justify-content:center;
-    align-content:center;
-    margin:5px;
+    justify-items:center;
+    font-size:2rem;
+    align-items:center;
   }
 
 }

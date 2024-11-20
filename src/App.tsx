@@ -9,6 +9,8 @@ import ProgressBar from './components/ProgressBar/ProgressBar';
 import './styles/global.css';
 
 const App = () => {
+
+  /*
   const ProgressWrapper = () => {
     const location = useLocation(); // Hook para obtener la ruta actual
 
@@ -21,6 +23,7 @@ const App = () => {
 
     return <ProgressBar progress={progress} />;
   };
+  */
 
   return (
     <Router>
@@ -29,7 +32,7 @@ const App = () => {
         <div className="main-layout">
           <MainContent>
             <AppRoutes /> {/* Aquí se renderizarán las rutas */}
-            <ProgressWrapper/>
+            {/*<ProgressWrapper/>*/}
           </MainContent>
         </div>
         <Footer />

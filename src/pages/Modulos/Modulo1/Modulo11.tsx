@@ -34,10 +34,10 @@ const Modulo11 = () => {
         <section className="seccion-contenido animar-derecha">
           <h2>Competencias</h2>
           <ul className="competencias-lista">
-            <li>✔ Comprensión de los conceptos básicos de la programación web.</li>
-            <li>✔ Identificación de diferencias entre front-end y back-end.</li>
-            <li>✔ Conocimiento sobre la preparación del ambiente de trabajo.</li>
-            <li>✔ Uso básico de la herramienta VS Code.</li>
+            <li>Comprensión de los conceptos básicos de la programación web.</li>
+            <li>Identificación de diferencias entre front-end y back-end.</li>
+            <li>Conocimiento sobre la preparación del ambiente de trabajo.</li>
+            <li>Uso básico de la herramienta VS Code.</li>
           </ul>
         </section>
 
