@@ -35,19 +35,9 @@ const Modulos = () => {
         title: 'Formato y Estructura de HTML',
         description: 'Introduccion a la programacion en Frontend con HTML.',
         items: [
-          { type: 'Lesson', title: 'What is the Back-end?' },
-          { type: 'Article', title: 'JavaScript for Node.js' },
-          { type: 'Article', title: 'What Is JSON?' },
-        ],
-        image: javascript, // Otra imagen para este módulo
-      },
-      {
-        title: 'Formato y Estructura de HTML',
-        description: 'Introduccion a la programacion en Frontend con HTML.',
-        items: [
-          { type: 'Lesson', title: 'What is the Back-end?' },
-          { type: 'Article', title: 'JavaScript for Node.js' },
-          { type: 'Article', title: 'What Is JSON?' },
+          { type: 'Lesson', title: 'Secciones y divisiones' },
+          { type: 'Article', title: '¿Por qué utilizar instrucciones clave?' },
+          { type: 'Article', title: 'Elementos' },
         ],
         image: javascript, // Otra imagen para este módulo
       },
@@ -55,9 +45,9 @@ const Modulos = () => {
         title: 'Decorando con CSS',
         description: 'Introduccion a diseño web con CSS.',
         items: [
-          { type: 'Lesson', title: 'What is the Back-end?' },
-          { type: 'Article', title: 'JavaScript for Node.js' },
-          { type: 'Article', title: 'What Is JSON?' },
+          { type: 'Lesson', title: 'Añade un poco de color' },
+          { type: 'Article', title: 'Conoce los contenedores flex' },
+          { type: 'Article', title: '¿Qué es un grid?' },
         ],
         image: javascript, // Otra imagen para este módulo
       },
@@ -65,19 +55,9 @@ const Modulos = () => {
         title: 'Un poco de JavaScript',
         description: 'Introduccion a la programacion logica con JavaScript',
         items: [
-          { type: 'Lesson', title: 'What is the Back-end?' },
-          { type: 'Article', title: 'JavaScript for Node.js' },
-          { type: 'Article', title: 'What Is JSON?' },
-        ],
-        image: javascript, // Otra imagen para este módulo
-      },
-      {
-        title: 'Publicar a la Web',
-        description: 'Como hacer publico tu trabajo en la web',
-        items: [
-          { type: 'Lesson', title: 'What is the Back-end?' },
-          { type: 'Article', title: 'JavaScript for Node.js' },
-          { type: 'Article', title: 'What Is JSON?' },
+          { type: 'Lesson', title: 'Variables y sus tipos' },
+          { type: 'Article', title: 'Sintaxis de una función' },
+          { type: 'Article', title: '¿Qué uso, let o var?' },
         ],
         image: javascript, // Otra imagen para este módulo
       },

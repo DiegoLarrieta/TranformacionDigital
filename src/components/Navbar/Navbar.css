@@ -9,21 +9,30 @@
   z-index: 900;
   transition: all 0.3s ease;
   justify-content: center; /* Distribuir uniformemente en el eje horizontal */
-  
 }
 
 .navbar a{
+  box-sizing: border-box;
   color: white;
   padding: 4px;
-  transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para el hover */
-  font-size:clamp(0.8rem, 1rem, 1.7rem);
-
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animación suave */
+  font-size:calc(1rem+0.5vw);
 }
 
 .navbar-list.hidden {
   opacity: 0;
   pointer-events: none; /* Evita que se puedan hacer clics en el navbar cuando está oculto */
+  padding-left:0;
 }
+
+.navbar-item {
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  gap: 10px; /* Espacio entre el icono y el texto */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animación suave */
+}
+
 
 @keyframes slideDown {
   from {
@@ -49,8 +58,8 @@
   display: flex;
   list-style: none;
   margin: 0;
+  padding:0;
   gap:1rem;
-  padding: 0 0.75rem;
   justify-content: space-evenly; /* Distribuir uniformemente en pantallas grandes */
   flex-wrap: wrap; /* Permite que los elementos se ajusten */
 }
@@ -63,7 +72,7 @@
   font-weight: bold;
   align-items:center;
   padding: 0; /* Más padding horizontal */
-  margin:20px;
+  margin:0.8rem 0;
   border-radius: 4px; /* Bordes redondeados */
   justify-content:center;
   align-content:center;
@@ -73,13 +82,13 @@
   display:flex;
   background-color: rgba(255, 255, 255, 0.15);
   color: #535bf2;
+  justify-items:center !important;
 }
 
 .navbar-icon {
   width: 30px;
   height: 30px;
   margin-right:8px;
-  align-self:center;
 }
 
 
@@ -106,6 +115,7 @@
 
   .navbar-list {
     display:flex;
+    
     flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
     align-items: center; /* Alinea los elementos al centro */
     justify-content: space-between; /* Distribuir uniformemente en el eje horizontal */
@@ -117,22 +127,10 @@
     display:flex;
     width: 100%; /* Cada elemento ocupa el ancho completo en pantallas pequeñas */
     justify-items:center;
-    font-size:2rem;
     align-items:center;
   }
+  .navbar a{
+    font-size:calc(1rem + 1vw);
+  }
 
-}
-
-.navbar-item {
-  display: flex;
-  align-items: center; /* Centra verticalmente el contenido */
-  justify-content: center; /* Centra horizontalmente el contenido */
-  gap: 10px; /* Espacio entre el icono y el texto */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animación suave */
-}
-
-/* Estilo activo para la opción seleccionada */
-.navbar-item.active {
-  background-color: rgba(255, 255, 255, 0.15);
-  transform: scale(1.02);
 }

@@ -1,8 +1,8 @@
 .metodologia-container{
-  margin-top: 40px;
-
   display:flex;
   justify-content:center;
+  margin: 4rem auto;
+
 }
 
 .metodologia-content {
