@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import { FaStar, FaClock, FaCalendarAlt, FaSignal } from 'react-icons/fa';
-import { useNavigate, useLocation } from 'react-router-dom';
+import {  useLocation } from 'react-router-dom';
 import MainContent from '../../components/Main/MainContent';
 import BotonNavegacion from '../../components/Button/BotonNavegacion';
 import Objetivos from '../Objetivos/Objetivos'; // Importamos el componente Objetivos
