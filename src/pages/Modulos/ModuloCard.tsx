@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ModuloCard.css';
-import { testIcon, clockIcon, levelIcon, lectureIcon, lockIcon } from '../../assets';
+import { testIcon, lectureIcon, lockIcon } from '../../assets';
 
 interface SyllabusItem {
   title: string;
@@ -22,10 +22,6 @@ interface ModuloCardProps {
 
 const ModuloCard: React.FC<ModuloCardProps> = ({
   title,
-  level,
-  time,
-  projects,
-  prerequisites,
   syllabus,
   includes,
   includesComponent,

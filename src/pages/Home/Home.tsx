@@ -10,12 +10,9 @@ import Metodologia from '../Metodologia/Metodologia';
 import { htmlcssjavas } from '../../assets';
 
 const Home = () => {
-  const navigate = useNavigate();
+
   const location = useLocation();
 
-  const handleContinue = () => {
-    navigate('/home/objetivos');
-  };
 
   // Efecto para hacer scroll automático a "Objetivos" si la ruta es "/home/objetivos"
   React.useEffect(() => {
