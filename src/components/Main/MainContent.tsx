@@ -11,3 +11,4 @@ const MainContent: React.FC<{ children?: React.ReactNode }> = ({ children }) => 
 };
 
 export default MainContent;
+
