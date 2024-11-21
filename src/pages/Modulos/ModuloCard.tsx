@@ -6,7 +6,12 @@ import BotonNavegacion from '../../components/Button/BotonNavegacion';
 interface SyllabusItem {
   title: string;
   description: string;
-  items: { type: string; title: string }[];
+  items: {
+    type: string;
+    title: string;
+    hasPractice?: boolean;  
+    practiceRoute?: string; 
+  }[];
   image: string;
 }
 
@@ -18,7 +23,7 @@ interface ModuloCardProps {
   prerequisites: string;
   syllabus: SyllabusItem[];
   includes: string[];
-  includesComponent?: React.ReactNode; // Nuevo prop opcional para el componente de "includes"
+  includesComponent?: React.ReactNode;
 }
 
 const ModuloCard: React.FC<ModuloCardProps> = ({
@@ -29,7 +34,7 @@ const ModuloCard: React.FC<ModuloCardProps> = ({
   prerequisites,
   syllabus,
   includes,
-  includesComponent, // Nuevo prop para incluir el componente dinámico
+  includesComponent,
 }) => {
   const [expandedSections, setExpandedSections] = useState<number[]>([]);
 
@@ -63,7 +68,7 @@ const ModuloCard: React.FC<ModuloCardProps> = ({
       <div className="course-includes">
         <h3>Politicas de curso</h3>
         {includesComponent ? (
-          includesComponent // Renderiza el componente de "includes" si está presente
+          includesComponent
         ) : (
           <ul>
             {includes.map((item, index) => (
@@ -95,12 +100,23 @@ const ModuloCard: React.FC<ModuloCardProps> = ({
                         className="syllabus-item-icon"
                       />
                       {item.title}
+                      {item.hasPractice && (
+                        <BotonNavegacion 
+                          nombre="practice-button" 
+                          texto="Practica" 
+                          ruta={item.practiceRoute || ''}
+                        />
+                      )}
                     </li>
                   ))}
                 </ul>
                 {section.image && (
                   <div className="syllabus-image-container">
-                    <img src={section.image} alt={`${section.title} image`} className="syllabus-image" />
+                    <img 
+                      src={section.image} 
+                      alt={`${section.title} image`} 
+                      className="syllabus-image" 
+                    />
                   </div>
                 )}
               </div>
@@ -113,3 +129,4 @@ const ModuloCard: React.FC<ModuloCardProps> = ({
 };
 
 export default ModuloCard;
+

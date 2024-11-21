@@ -26,6 +26,7 @@ import Modulo14 from '../pages/Modulos/Modulo1/Modulo14';
 import Modulo1Lectura from '../pages/Modulos/Modulo1/Modulo1Lectura';
 import Modulo1Prueba from '../pages/Modulos/Modulo1/Modulo1Prueba';
 import Modulo1Test from '../pages/Modulos/Modulo1/Modulo1Test';
+import ModuloPractica11 from '../pages/Modulos/Modulo1/practicaModulo11';
 
 const AppRoutes = () => {
   return (
@@ -47,6 +48,7 @@ const AppRoutes = () => {
       <Route path="/modulo1/lectura" element={<Modulo1Lectura />} />
       <Route path="/modulo1/prueba" element={<Modulo1Prueba />} />
       <Route path="/modulo1/test" element={<Modulo1Test />} />
+      <Route path = "/modulo1/practica11" element = {<ModuloPractica11/>} />
       {/* Agrega más rutas aquí conforme se necesiten */}
     </Routes>
   );

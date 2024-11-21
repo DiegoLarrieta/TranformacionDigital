@@ -16,7 +16,7 @@ const Modulos = () => {
         title: 'Preparacion del Ambiente y Conceptos Basicos',
         description: 'Introduccion y conceptos basicos de programacion.',
         items: [
-          { type: 'Lesson', title: 'Módulo 1 - Preparación del Ambiente y Conceptos Básicos' },
+          { type: 'Lesson', title: 'Módulo 1 - Preparación del Ambiente y Conceptos Básicos', hasPractice:true, practiceRoute:"/modulo1/practica11" },
           { type: 'Lesson', title: 'Tema 1 - Conceptos Básicos'},
           { type: 'Lesson', title: 'Tema 2 - Solicitudes de Empleo'},
           { type: 'Lesson', title: 'Tema 3 - Otros conceptos que debes de conocer'},
@@ -45,7 +45,7 @@ const Modulos = () => {
         title: 'Decorando con CSS',
         description: 'Introduccion a diseño web con CSS.',
         items: [
-          { type: 'Lesson', title: 'Añade un poco de color' },
+          { type: 'Lesson', title: 'Añade un poco de color'},
           { type: 'Article', title: 'Conoce los contenedores flex' },
           { type: 'Article', title: '¿Qué es un grid?' },
         ],

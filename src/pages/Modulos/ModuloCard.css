@@ -8,7 +8,12 @@
   width: 90%;
   max-width: 1000px;
   margin: 2rem auto;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.practice-button{
+  padding:0.3rem;
+  font-size:0.9rem !important;
+  background-color:gray;
 }
 
 .modulo-header {
