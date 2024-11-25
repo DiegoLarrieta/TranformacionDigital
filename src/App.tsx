@@ -1,29 +1,31 @@
-import React, { useMemo } from 'react';
-import { BrowserRouter as Router, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/Header/Header'; // Asegúrate de ajustar la ruta de importación
 import Footer from './components/Footer/Footer';
-import Navbar from './components/Navbar/Navbar';
+//import Navbar from './components/Navbar/Navbar';
 import MainContent from './components/Main/MainContent';
-import AppRoutes, { routes } from './routes/AppRoutes'; // Importa las rutas exportadas
-import ProgressBar from './components/ProgressBar/ProgressBar';
+import AppRoutes  from './routes/AppRoutes'; // Importa las rutas exportadas
+//import ProgressBar from './components/ProgressBar/ProgressBar';
 import './styles/global.css';
 
 const App = () => {
+  const [showFooter, setShowFooter] = useState(false);
 
-  /*
-  const ProgressWrapper = () => {
-    const location = useLocation(); // Hook para obtener la ruta actual
+  useEffect(() => {
+    const marker = document.getElementById('end-of-content');
+    if (!marker) return;
 
-    // Calcular el progreso basado en la posición actual en las rutas
-    const progress = useMemo(() => {
-      const totalRoutes = routes.length; // Número total de rutas
-      const currentIndex = routes.findIndex((route) => route.path === location.pathname);
-      return currentIndex >= 0 ? ((currentIndex + 1) / totalRoutes) * 100 : 0;
-    }, [location.pathname]);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowFooter(entry.isIntersecting); // Mostrar el footer cuando el marcador sea visible
+      },
+      { threshold: 0.1 } // Detecta cuando el 10% del marcador es visible
+    );
 
-    return <ProgressBar progress={progress} />;
-  };
-  */
+    observer.observe(marker);
+
+    return () => observer.disconnect(); // Limpia el observer al desmontar
+  }, []);
 
   return (
     <Router>
@@ -31,11 +33,13 @@ const App = () => {
         <Header />
         <div className="main-layout">
           <MainContent>
-            <AppRoutes /> {/* Aquí se renderizarán las rutas */}
-            {/*<ProgressWrapper/>*/}
+            <AppRoutes />
+            {/* Marcador para detectar el final del contenido */}
+            <div id="end-of-content" style={{ height: '1px' }}></div>
           </MainContent>
         </div>
-        <Footer />
+        {/* Muestra el footer solo cuando el marcador es visible */}
+        {showFooter && <Footer />}
       </div>
     </Router>
   );

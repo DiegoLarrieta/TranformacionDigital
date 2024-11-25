@@ -1,4 +1,3 @@
-import React from 'react';
 import ModuloCard from './ModuloCard';
 import MainContent from '../../components/Main/MainContent';
 import { htmlcss, javascript } from '../../assets'; // Asegúrate de que estas rutas sean correctas

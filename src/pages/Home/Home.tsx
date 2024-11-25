@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import { FaStar, FaClock, FaCalendarAlt, FaSignal } from 'react-icons/fa';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import MainContent from '../../components/Main/MainContent';
 import BotonNavegacion from '../../components/Button/BotonNavegacion';
 import Objetivos from '../Objetivos/Objetivos'; // Importamos el componente Objetivos
@@ -10,12 +10,9 @@ import Metodologia from '../Metodologia/Metodologia';
 import { htmlcssjavas } from '../../assets';
 
 const Home = () => {
-  const navigate = useNavigate();
   const location = useLocation();
 
-  const handleContinue = () => {
-    navigate('/home/objetivos');
-  };
+
 
   // Efecto para hacer scroll automático a "Objetivos" si la ruta es "/home/objetivos"
   React.useEffect(() => {
