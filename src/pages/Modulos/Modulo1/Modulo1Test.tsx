@@ -77,7 +77,7 @@ const Modulo1Test: React.FC = () => {
 </html>`);
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [completado, setCompletado] = useState(false);
+  //const [ setCompletado] = useState(false);
   const navigate = useNavigate();
 
   const runCode = () => {
@@ -89,7 +89,7 @@ const Modulo1Test: React.FC = () => {
 
   const finalizarCurso = () => {
     // Marca el módulo como completado
-    setCompletado(true);
+
     
     // Redirige al módulo principal
     navigate('/modulos');
