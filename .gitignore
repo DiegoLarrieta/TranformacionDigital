@@ -8,9 +8,15 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
+
 dist-ssr
 *.local
+
+# Ignorar la carpeta dist
+dist/
+
+# Excluir el archivo _redirects de la regla anterior
+!dist/_redirects
 
 # Editor directories and files
 .vscode/*
