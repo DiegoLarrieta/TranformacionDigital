@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./CompletarOraciones.module.css";
+import styles from "./completarOraciones.module.css"
 
 interface Sentence {
   text: string;
