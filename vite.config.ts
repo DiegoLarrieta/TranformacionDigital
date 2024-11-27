@@ -1,11 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+
 // https://vitejs.dev/config/
 
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
+  base: '/CCA_cursos/ad2024/', // Establece el subdirectorio base desde el cual se sirve tu proyecto
   plugins: [
     react(),
     viteStaticCopy({
