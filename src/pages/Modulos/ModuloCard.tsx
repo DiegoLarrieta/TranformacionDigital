@@ -6,6 +6,7 @@ import BotonNavegacion from '../../components/Button/BotonNavegacion';
 interface SyllabusItem {
   title: string;
   description: string;
+  startRoute: string; // Ruta inicial del módulo
   items: {
     type: string;
     title: string;
@@ -58,7 +59,6 @@ const ModuloCard: React.FC<ModuloCardProps> = ({
       <div className="modulo-header">
         <h1>{title}</h1>
         <p>Aprende de front-end y back-end con html, css y javascript.</p>
-        <BotonNavegacion texto="Comenzar" ruta="/modulo1/1.1-Lectura" />
       </div>
 
       <div className="course-includes">
@@ -85,6 +85,14 @@ const ModuloCard: React.FC<ModuloCardProps> = ({
                 {expandedSections.includes(index) ? '▲' : '▼'}
               </button>
             </div>
+            {expandedSections.includes(index) && (
+              <div className="start-module-button">
+                <BotonNavegacion
+                  texto="Comenzar Módulo"
+                  ruta={section.startRoute || ''}
+                />
+              </div>
+            )}
             {expandedSections.includes(index) && (
               <div className="syllabus-content">
                 <ul className="syllabus-items">

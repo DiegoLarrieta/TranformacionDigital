@@ -28,7 +28,7 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/CCA_cursos/ad2024">
       <div className="app">
         <Header />
         <div className="main-layout">

@@ -20,8 +20,14 @@ const frasesMotivacion = [
   "¡Excelente trabajo!"
 ];
 
+const frasesFinalizacion = [
+  "¡Haz Finalizado!",
+  "¡Estas a punto de finalizar sigue asi!",
+  "¡Gran trabajo haz finalizado!"
+];
+
 interface BorregoAvatarProps {
-  etapa: 'inicio' | 'progreso' | 'motivacion';
+  etapa: 'inicio' | 'progreso' | 'motivacion' | 'finalizacion';
   onClose?: () => void;
   autoCloseDelay?: number;
 }
@@ -44,6 +50,8 @@ const BorregoAvatar: React.FC<BorregoAvatarProps> = ({
         return frasesProgreso;
       case 'motivacion':
         return frasesMotivacion;
+      case 'finalizacion':
+        return frasesFinalizacion;
       default:
         return frasesInicio;
     }

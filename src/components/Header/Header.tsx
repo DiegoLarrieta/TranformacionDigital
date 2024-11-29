@@ -5,6 +5,7 @@ import {
   logotectransparente,
   logotipocva,
   hamburgerMenuIcon,
+  isotipoBlanco,
 } from '../../assets';
 
 const Header = () => {
@@ -42,7 +43,10 @@ const Header = () => {
   return (
     <header className="header">
       {/* Logo del Tec a la izquierda */}
+      
       <img src={logotectransparente} className="tec-logo" alt="Logo Tec" />
+
+      
 
       {/* Íconos de Menú de hamburguesa y Módulos */}
       <div className="header-icons">
@@ -58,6 +62,7 @@ const Header = () => {
 
       {/* Logo de CVA a la derecha */}
       <img src={logotipocva} className="cvx" alt="Logo CVA" />
+      <img src={isotipoBlanco} className="cvamini" alt="Isotipo Blanco" />
 
       {/* Navbar que aparece al hacer hover en el menú de hamburguesa o en sí mismo */}
       <div

@@ -33,7 +33,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ routes }) => {
           backgroundColor: progressColor,
         }}
       ></div>
-      <p className="progress-percentage">{progress.toFixed(2)}% Completado</p>
+      <p className="progress-percentage">{progress.toFixed(0)}% Completado</p>
     </div>
   );
 };

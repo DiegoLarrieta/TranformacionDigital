@@ -8,6 +8,7 @@
   flex-wrap: wrap;
   gap: 20px;
   align-items: center;
+  background-color: (0, 0, 0, 0);
 }
 
 .home-content h1 {
@@ -114,17 +115,20 @@
 .boton-container {
   margin-top: 20px;
 }
-
-#objetivos-section {
-  margin-top: 40px; /* Espacio adicional antes de la sección de objetivos */
+.welcome-content,
+.objetivos-content,
+.metodologia-content,
+.MapaConceptual-content
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  background-color: (0, 0, 0, 0);
+  margin-top: 40px; /* Espacio adicional */
 }
 
-#MapaConceptual-section{
-  margin-top: 40px; /* Espacio adicional antes de la sección de objetivos */
-}
-#metodologia-section{
-  margin-top: 40px;
-}
+
 
 /* Responsive para pantallas pequeñas */
 @media (max-width: 768px) {

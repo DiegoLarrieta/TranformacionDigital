@@ -286,6 +286,12 @@
   margin-right: 1rem;
   transition: var(--accent-gradient);
 }
+.start-module-button {
+  display: flex;
+  justify-content: flex-start; /* Alinea el botón a la izquierda */
+  margin: 1rem 1.5rem; /* Ajusta los márgenes según sea necesario */
+  min-height: 50px;
+}
 
 .syllabus-item:hover .syllabus-item-icon {
   background: var(--primary-gradient);

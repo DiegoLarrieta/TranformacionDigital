@@ -8,8 +8,8 @@ const Footer = () => {
         <p>D.R.© Instituto Tecnológico y de Estudios Superiores de Monterrey, México, 2024.</p>
       </div>
       <div className="footer-right">
-        <a href="/politicas" className="footer-link">Políticas de Privacidad</a>
-        <a href="/aviso" className="footer-link">Aviso de Privacidad</a>
+        <a href="https://tec.mx/es/aviso-privacidad-centro-virtual-aprendizaje" className="footer-link" target="_blank"   >Políticas de Privacidad </a>
+        <a href="https://tec.mx/es/politicas-de-privacidad-del-tecnologico-de-monterrey" className="footer-link" target="_blank" >Aviso de Privacidad</a>
         <a href="/creditos" className="footer-link">Créditos</a>
       </div>
     </footer>

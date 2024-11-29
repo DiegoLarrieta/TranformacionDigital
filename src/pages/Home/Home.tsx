@@ -47,7 +47,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="welcome-section">
+        <div className="welcome-content">
           <h2>¡Bienvenid@ a esta experiencia de aprendizaje virtual!</h2>
           <p>
             Te damos la más cordial bienvenida al "Curso en Programación Web Básica con HTML, CSS y JavaScript", en él encontrarás todos los conceptos necesarios para empezar a crear páginas web con tecnologías y herramientas de gran relevancia en la actualidad.
@@ -67,15 +67,15 @@ const Home = () => {
         </div>
 
         {/* Sección de Objetivos con el ID "objetivos-section" */}
-        <div id="objetivos-section">
+        <div id="objetivos-content">
           <Objetivos />
         </div>
         {/* Sección de Mapa Conceptual con el ID "MapaConceptual-section" */}
-        <div id="MapaConceptual-section">
+        <div id="MapaConceptual-content">
           <MapaConceptual/>
         </div>
         {/* Sección de Mapa Conceptual con el ID "MapaConceptual-section" */}
-        <div id="metodologia-section">
+        <div id="metodologia-content">
           <Metodologia/>
         </div>
       </div>

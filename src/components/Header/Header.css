@@ -75,6 +75,9 @@
   .modules-icon {
     display: block;
   }
+  .cvamini{
+    display: none;
+  }
 }
 
 /* Estilos para pantallas pequeñas */
@@ -101,10 +104,22 @@
     height: 40px; /* Reduce el tamaño del logo */
   }
 
+  /* Isotipo Blanco */
+  .cvamini {
+    display: none; /* Ocultar por defecto */
+    height: 30px; /* Ajusta el tamaño según sea necesario */
+    width: auto;
+    margin-left: 8px; /* Espaciado a la derecha del tec-logo */
+  }
+
   .cvx {
     margin: 0;
     order: 2;
     height: 40px; /* Reduce el tamaño del logo */
+  }
+
+  .cvamini{
+    display: none;
   }
 
   .icon-button {
@@ -128,6 +143,9 @@
 @media (max-width: 550px) {
   .cvx {
     display: none; /* Oculta el logo CVA */
+  }
+  .cvamini{
+    display: inline-block;
   }
 
   .header {

@@ -34,6 +34,7 @@ h3 {
 .modulo12-container p {
   color: #000; /* Color de texto en negro */
   margin-bottom: 10px;
+  font-size: 1.2rem;
 }
 
 .tech-icons-container {
@@ -42,6 +43,7 @@ h3 {
   justify-content: space-around;
   margin-top: 20px;
 }
+
 
 .tech-instruction {
   text-align: center;
