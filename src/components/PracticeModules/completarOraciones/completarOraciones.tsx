@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./completarOraciones.module.css"
+import BotonNavegacion from "../../Button/BotonNavegacion";
 
 interface Sentence {
   text: string;
@@ -69,16 +70,15 @@ const CompletarOraciones: React.FC<CompletarOracionesProps> = ({ sentences }) =>
               id={`input-${index}`}
               placeholder={sentence.placeholder}
               className={styles.completarOracionesInputField}
-              value={userInputs[index]} // Usar userInputs en lugar de results
+              value={userInputs[index]}
               onChange={(e) => handleInputChange(e.target.value, index)}
               onKeyDown={(e) => handleKeyDown(e, index)}
             />
             {sentence.continuation}
           </div>
         ))}
-          <button className={styles.completarOracionesButton} onClick={checkAnswers}>
-            Verificar Respuestas
-          </button>
+        <BotonNavegacion texto = "Verificar respuestas" nombre= "oracionesBtn" onClick={checkAnswers}/>
+
         </div>
       </div>
     );

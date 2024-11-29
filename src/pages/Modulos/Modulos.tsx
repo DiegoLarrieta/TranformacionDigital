@@ -20,16 +20,7 @@ const Modulos = () => {
         items: [
           { type: 'Lesson', title: 'Módulo 1 - Preparación del Ambiente y Conceptos Básicos', hasPractice:true, practiceRoute:"/modulo1/practica11" },
           { type: 'Lesson', title: 'Tema 1 - Conceptos Básicos'},
-          { type: 'Lesson', title: 'Tema 2 - Solicitudes de Empleo'},
-          { type: 'Lesson', title: 'Tema 3 - Otros conceptos que debes de conocer'},
-          { type: 'Lesson', title: 'Tema 4 - Preparacion del Ambiente de trabajo'},
-          { type: 'Lesson', title: 'Tema 5 - Introduccion a VS Code'},
-          { type: 'Lesson', title: 'Tema 6 - Organizacion de Archivos'},
-          { type: 'Lesson', title: 'Tema 7 - Escribiendo Codigo'},
-          { type: 'Lesson', title: 'Tema 8 - Otras recomendaciones'},
-          { type: 'Lesson', title: 'Tema 9 - Atajos'},
-          { type: 'Quiz', title: 'Quiz 1 - Ejercicio 1'},
-          { type: 'Lock', title: 'Finalizacion' },
+          { type: 'Lock', title: 'Finalizacion' }
         ],
         image: htmlcss, // Imagen específica para este módulo
       },
