@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './LetraPorLetra.module.css';
+import styles from './letraPorLetra.module.css';
 import BotonNavegacion from '../../Button/BotonNavegacion';
 
 interface Question {
