@@ -19,7 +19,7 @@ const Modulos = () => {
 
         items: [
           { type: 'Lesson', title: 'Módulo 1 - Preparación del Ambiente y Conceptos Básicos', hasPractice:true, practiceRoute:"/modulo1/practica11" },
-          { type: 'Lesson', title: 'Tema 1 - Conceptos Básicos'},
+          { type: 'Lesson', title: 'Tema 1 - Conceptos Básicos', hasPractice:true, practiceRoute:"/modulo1/practica12"},
           { type: 'Lesson', title: 'Tema 2 - Diferencias entre frameworks'},
         ],
         image: htmlcss, // Imagen específica para este módulo

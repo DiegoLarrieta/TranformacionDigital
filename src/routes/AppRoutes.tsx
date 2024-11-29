@@ -16,6 +16,7 @@ import Modulo12 from '../pages/Modulos/Modulo1/Modulo12';
 import Modulo13 from '../pages/Modulos/Modulo1/Modulo13';
 import Modulo14 from '../pages/Modulos/Modulo1/Modulo14';
 import ModuloPractica11 from '../pages/Modulos/Modulo1/practicaModulo11';
+import ModuloPractica12 from '../pages/Modulos/Modulo1/practicaModulo12';
 
 import Modulo21 from '../pages/Modulos/Modulo2/Modulo21';
 import Modulo31 from '../pages/Modulos/Modulo3/Modulo31';
@@ -50,6 +51,7 @@ const AppRoutes = () => {
           <Route path="/modulo1/1.3-Lectura" element={<Modulo13 />} />
           <Route path="/modulo1/1.4-Lectura" element={<Modulo14 />} />
           <Route path="/modulo1/practica11" element={<ModuloPractica11 />} />
+          <Route path="/modulo1/practica12" element={<ModuloPractica12 />} />
           <Route path="/modulo2/2.1-Lectura" element={<Modulo21 />} />
           <Route path="/modulo3/3.1-Lectura" element={<Modulo31 />} />
           <Route path="/modulo4/4.1-Lectura" element={<Modulo41 />} />

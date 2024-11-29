@@ -1,0 +1,196 @@
+:root {
+    --primary: #0056b3;
+    --secondary: #4a90e2;
+    --accent: #0056b3;
+    --background: #f8fafc;
+    --text: #4b5563;
+    --card: #ffffff;
+    --hover: #c7d2fe;
+    --active: #818cf8;
+}
+
+
+.mainContainer {
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.contentWrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--card);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+.headerSection {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    padding: 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.headerSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.2) 100%);
+    transform: skewX(-45deg);
+}
+
+.themeToggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.themeToggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.headerTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.questionContainer {
+    background: var(--card);
+    padding: 2.5rem;
+    margin: 2rem;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+    font-size: 1.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.inputsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.letterInput {
+    width: 70px;
+    height: 70px;
+    border: 3px solid var(--primary);
+    border-radius: 15px;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    background: var(--card);
+    color: var(--text);
+    font-weight: bold;
+}
+
+.letterInput:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+.letterInput.correct {
+    border-color: #22c55e;
+    background-color: #f0fdf4;
+    color: #166534;
+}
+
+.letterInput.shake {
+    animation: shake 0.2s ease-in-out 0s 2;
+}
+
+.progress {
+    text-align: center;
+    color: var(--text);
+    margin: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding-bottom: 2rem;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeOut {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+.fadeIn {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@media (max-width: 480px) {
+    .letterInput {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .question {
+        font-size: 1.4rem;
+    }
+
+    .headerTitle {
+        font-size: 1.8rem;
+    }
+
+    .mainContainer {
+        padding: 1rem;
+    }
+
+    .themeToggle {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
+

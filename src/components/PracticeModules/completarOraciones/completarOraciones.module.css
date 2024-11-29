@@ -4,9 +4,7 @@
     --card-gradient: linear-gradient(0, var(--background-color) 0%, var(--surface-color) 50%, var(--background-color)100%);
     --tec-color: #0056b3;
     --tec-color-secondary: #4a90e2;
-    --primary: #a5b4fc;
-    --secondary: #818cf8;
-    --accent: #6366f1;
+
     --background: #f8fafc;
     --text: #4b5563;
     --card: #ffffff;
