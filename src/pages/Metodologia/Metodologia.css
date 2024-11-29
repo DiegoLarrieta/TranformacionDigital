@@ -50,9 +50,6 @@
   font-size:1.25rem;
 }
 
-.recomendaciones-list strong{
-  color:rgb(58, 118, 229);
-}
 
 @keyframes fadeIn {
   0% {opacity: 0; }
