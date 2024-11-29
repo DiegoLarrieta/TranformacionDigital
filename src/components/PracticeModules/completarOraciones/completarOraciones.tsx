@@ -78,6 +78,7 @@ const CompletarOraciones: React.FC<CompletarOracionesProps> = ({ sentences }) =>
           </div>
         ))}
         <BotonNavegacion texto = "Verificar respuestas" nombre= "oracionesBtn" onClick={checkAnswers}/>
+        <BotonNavegacion texto="Regresar" ruta="/modulos"/>
 
         </div>
       </div>
