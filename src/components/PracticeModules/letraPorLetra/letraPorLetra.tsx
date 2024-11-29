@@ -101,6 +101,9 @@ const LetraPorLetra: React.FC<LetraPorLetraProps> = ({
                 <div className={styles.headerSection}>
                     <h1 className={styles.headerTitle}>Juego de Palabras</h1>
                     <p className={styles.headerSubtitle}>Selecciona el primer recuadro y escribe la respuesta correcta</p>
+                    <button className={styles.themeToggleButton} onClick={toggleTheme}>
+                        {isDarkMode ? 'Modo Claro' : 'Modo Oscuro'}
+                    </button>
                 </div>
                 
                 <div className={`${styles.questionContainer} ${isTransitioning ? styles.fadeOut : styles.fadeIn}`}>

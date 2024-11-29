@@ -1,6 +1,5 @@
 import React from "react";
 import LetraPorLetra from "../../../components/PracticeModules/letraPorLetra/letraPorLetra";
-import BotonNavegacion from "../../../components/Button/BotonNavegacion";
 
 const ModuloPractica12: React.FC = () => {
 

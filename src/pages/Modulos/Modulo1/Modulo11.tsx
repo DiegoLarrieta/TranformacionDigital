@@ -9,7 +9,6 @@ const Modulo11 = () => {
         {/* Avatar con animación flotante */}
         <BorregoAvatar etapa="inicio"  />
         <h1 className="titulo-modulo">Módulo 1 - Preparación del Ambiente y Conceptos Básicos</h1>
-
         <div className="contenido-modulo">
           {/* Sección de Introducción */}
           <section className="seccion-contenido animar-izquierda">
